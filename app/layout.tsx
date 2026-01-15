@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
+import SiteHeader from "../components/SiteHeader";
 
 export const metadata: Metadata = {
   title: "Advance Fortify | Websites built to convert",
@@ -7,14 +8,13 @@ export const metadata: Metadata = {
     "Advance Fortify builds fast, SEO-ready websites and landing pages focused on clarity, trust, and real business results.",
 };
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
-      <body>{children}</body>
+      <body>
+        <SiteHeader />
+        {children}
+      </body>
     </html>
   );
 }
