@@ -1,21 +1,34 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  --bg-dark: #0a0a0f;
-  --bg-darker: #050508;
-  --bg-gradient-start: #0f0f1a;
-  --bg-gradient-end: #1a0f1a;
-  --gold: #d4af37;
-  --gold-bright: #f4d03f;
-  --orange: #ff8c42;
-  --orange-bright: #ffa366;
-  --text-primary: #ffffff;
-  --text-secondary: #b8b8c8;
-  --text-muted: #8888a0;
-  --border-glow: rgba(212, 175, 55, 0.3);
-  --border-glow-strong: rgba(212, 175, 55, 0.6);
-  --shadow-glow: 0 0 20px rgba(212, 175, 55, 0.2);
-  --shadow-glow-strong: 0 0 40px rgba(212, 175, 55, 0.4);
+  /* Background colors */
+  --bg: #07060B;
+  --panel: #0C0B12;
+  --glass: rgba(255, 255, 255, 0.04);
+  
+  /* Text colors */
+  --text: #F4F2EA;
+  --text-secondary: rgba(244, 242, 234, 0.72);
+  --text-muted: rgba(244, 242, 234, 0.5);
+  
+  /* Accent colors */
+  --gold: #D6B25E;
+  --amber: #FFB347;
+  --magenta: #E445A8;
+  --purple: #6E3AF2;
+  
+  /* Legacy aliases for compatibility */
+  --bg-dark: var(--bg);
+  --bg-darker: var(--bg);
+  --bg-gradient-start: var(--bg);
+  --bg-gradient-end: var(--bg);
+  --text-primary: var(--text);
+  
+  /* Border and glow effects */
+  --border-glow: rgba(214, 178, 94, 0.22);
+  --border-glow-strong: rgba(255, 179, 71, 0.40);
+  --shadow-glow: 0 0 20px rgba(255, 179, 71, 0.15);
+  --shadow-glow-strong: 0 0 40px rgba(255, 179, 71, 0.25);
 }
 
 * {
@@ -33,8 +46,8 @@ body {
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: var(--bg-dark);
-  color: var(--text-primary);
+  background: var(--bg);
+  color: var(--text);
   line-height: 1.6;
   overflow-x: hidden;
   position: relative;
@@ -49,9 +62,10 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 80%, rgba(255, 140, 66, 0.1) 0%, transparent 50%),
-    linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--bg-gradient-end) 100%);
+    radial-gradient(circle at 20% 50%, rgba(255, 179, 71, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(228, 69, 168, 0.06) 0%, transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(110, 58, 242, 0.04) 0%, transparent 50%),
+    linear-gradient(135deg, var(--bg) 0%, var(--bg) 100%);
   background-attachment: fixed;
   z-index: -2;
   animation: aurora 20s ease-in-out infinite alternate;
@@ -65,13 +79,13 @@ body::after {
   width: 100%;
   height: 100%;
   background-image: 
-    radial-gradient(2px 2px at 20% 30%, rgba(212, 175, 55, 0.3), transparent),
-    radial-gradient(2px 2px at 60% 70%, rgba(255, 140, 66, 0.3), transparent),
-    radial-gradient(1px 1px at 50% 50%, rgba(212, 175, 55, 0.2), transparent),
-    radial-gradient(1px 1px at 80% 10%, rgba(255, 140, 66, 0.2), transparent),
-    radial-gradient(2px 2px at 90% 40%, rgba(212, 175, 55, 0.2), transparent),
-    radial-gradient(1px 1px at 33% 60%, rgba(255, 140, 66, 0.2), transparent),
-    radial-gradient(1px 1px at 10% 80%, rgba(212, 175, 55, 0.2), transparent);
+    radial-gradient(2px 2px at 20% 30%, rgba(214, 178, 94, 0.25), transparent),
+    radial-gradient(2px 2px at 60% 70%, rgba(255, 179, 71, 0.2), transparent),
+    radial-gradient(1px 1px at 50% 50%, rgba(214, 178, 94, 0.15), transparent),
+    radial-gradient(1px 1px at 80% 10%, rgba(228, 69, 168, 0.15), transparent),
+    radial-gradient(2px 2px at 90% 40%, rgba(214, 178, 94, 0.2), transparent),
+    radial-gradient(1px 1px at 33% 60%, rgba(110, 58, 242, 0.15), transparent),
+    radial-gradient(1px 1px at 10% 80%, rgba(214, 178, 94, 0.18), transparent);
   background-size: 200% 200%;
   background-position: 0% 0%;
   animation: particles 30s linear infinite;
@@ -156,7 +170,7 @@ img {
 }
 
 .glow-text {
-  text-shadow: 0 0 10px rgba(212, 175, 55, 0.5);
+  text-shadow: 0 0 10px rgba(255, 179, 71, 0.4);
 }
 
 /* Buttons */
@@ -174,14 +188,14 @@ img {
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%);
-  color: var(--bg-dark);
-  box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+  background: linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%);
+  color: var(--bg);
+  box-shadow: 0 4px 15px rgba(255, 179, 71, 0.25);
 }
 
 .btn-primary:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+  box-shadow: 0 6px 20px rgba(255, 179, 71, 0.35);
 }
 
 .btn-primary:active {
@@ -190,25 +204,25 @@ img {
 
 .btn-secondary {
   background: transparent;
-  color: var(--text-primary);
+  color: var(--text);
   border: 2px solid var(--border-glow);
   box-shadow: var(--shadow-glow);
 }
 
 .btn-secondary:hover {
-  background: rgba(212, 175, 55, 0.1);
+  background: rgba(214, 178, 94, 0.08);
   border-color: var(--border-glow-strong);
   box-shadow: var(--shadow-glow-strong);
 }
 
 .btn:focus-visible {
-  outline: 2px solid var(--gold);
+  outline: 2px solid var(--amber);
   outline-offset: 2px;
 }
 
 /* Cards */
 .card {
-  background: rgba(15, 15, 25, 0.6);
+  background: var(--glass);
   backdrop-filter: blur(10px);
   border: 1px solid var(--border-glow);
   border-radius: 1rem;
@@ -225,7 +239,7 @@ img {
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(135deg, rgba(212, 175, 55, 0.05) 0%, rgba(255, 140, 66, 0.05) 100%);
+  background: linear-gradient(135deg, rgba(255, 179, 71, 0.04) 0%, rgba(228, 69, 168, 0.03) 100%);
   opacity: 0;
   transition: opacity 0.3s ease;
   pointer-events: none;
@@ -259,10 +273,10 @@ img {
 .form-select {
   width: 100%;
   padding: 0.875rem 1rem;
-  background: rgba(15, 15, 25, 0.6);
+  background: var(--glass);
   border: 1px solid var(--border-glow);
   border-radius: 0.5rem;
-  color: var(--text-primary);
+  color: var(--text);
   font-size: 1rem;
   transition: all 0.3s ease;
 }
@@ -270,9 +284,9 @@ img {
 .form-input:focus,
 .form-textarea:focus,
 .form-select:focus {
-  border-color: var(--gold);
-  box-shadow: 0 0 0 3px rgba(212, 175, 55, 0.1);
-  background: rgba(15, 15, 25, 0.8);
+  border-color: var(--amber);
+  box-shadow: 0 0 0 3px rgba(255, 179, 71, 0.1);
+  background: rgba(255, 255, 255, 0.06);
 }
 
 .form-input::placeholder,

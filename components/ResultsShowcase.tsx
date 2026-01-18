@@ -48,7 +48,7 @@ export default function ResultsShowcase() {
               style={{
                 fontSize: '4rem',
                 fontWeight: 800,
-                background: 'linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%)',
+                background: 'linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -80,7 +80,7 @@ export default function ResultsShowcase() {
               style={{
                 fontSize: '4rem',
                 fontWeight: 800,
-                background: 'linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%)',
+                background: 'linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',

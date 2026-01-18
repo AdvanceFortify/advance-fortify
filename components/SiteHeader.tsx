@@ -55,16 +55,16 @@ export default function SiteHeader() {
         top: 0,
         zIndex: 1000,
         background: isScrolled
-          ? 'rgba(10, 10, 15, 0.85)'
-          : 'rgba(10, 10, 15, 0.5)',
+          ? 'rgba(12, 11, 18, 0.85)'
+          : 'rgba(12, 11, 18, 0.5)',
         backdropFilter: 'blur(20px)',
-        borderBottom: `1px solid ${isScrolled ? 'rgba(212, 175, 55, 0.3)' : 'rgba(212, 175, 55, 0.1)'}`,
+        borderBottom: `1px solid ${isScrolled ? 'rgba(214, 178, 94, 0.22)' : 'rgba(214, 178, 94, 0.12)'}`,
         transition: 'all 0.3s ease',
         boxShadow: isScrolled ? '0 4px 20px rgba(0, 0, 0, 0.3)' : 'none',
       }}
     >
       <div className="container" style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '1rem 1.5rem' }}>
-        <Link href="/" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--gold)', textDecoration: 'none' }}>
+        <Link href="/" style={{ fontSize: '1.5rem', fontWeight: 700, color: 'var(--amber)', textDecoration: 'none' }}>
           Advance Fortify
         </Link>
 
@@ -87,7 +87,7 @@ export default function SiteHeader() {
                 transition: 'color 0.3s ease',
                 textDecoration: 'none',
               }}
-              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
+              onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--amber)')}
               onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
             >
               {link.label}
@@ -122,7 +122,7 @@ export default function SiteHeader() {
                   top: '100%',
                   right: 0,
                   marginTop: '0.5rem',
-                  background: 'rgba(15, 15, 25, 0.95)',
+                  background: 'var(--panel)',
                   backdropFilter: 'blur(20px)',
                   border: '1px solid var(--border-glow)',
                   borderRadius: '0.5rem',
@@ -146,8 +146,8 @@ export default function SiteHeader() {
                       transition: 'all 0.3s ease',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.background = 'rgba(212, 175, 55, 0.1)';
-                      e.currentTarget.style.color = 'var(--gold)';
+                      e.currentTarget.style.background = 'rgba(214, 178, 94, 0.08)';
+                      e.currentTarget.style.color = 'var(--amber)';
                     }}
                     onMouseLeave={(e) => {
                       e.currentTarget.style.background = 'transparent';
@@ -184,7 +184,7 @@ export default function SiteHeader() {
             style={{
               width: '24px',
               height: '2px',
-              background: 'var(--gold)',
+              background: 'var(--amber)',
               transition: 'all 0.3s ease',
               transform: isMobileMenuOpen ? 'rotate(45deg) translate(5px, 5px)' : 'none',
             }}
@@ -193,7 +193,7 @@ export default function SiteHeader() {
             style={{
               width: '24px',
               height: '2px',
-              background: 'var(--gold)',
+              background: 'var(--amber)',
               transition: 'all 0.3s ease',
               opacity: isMobileMenuOpen ? 0 : 1,
             }}
@@ -202,7 +202,7 @@ export default function SiteHeader() {
             style={{
               width: '24px',
               height: '2px',
-              background: 'var(--gold)',
+              background: 'var(--amber)',
               transition: 'all 0.3s ease',
               transform: isMobileMenuOpen ? 'rotate(-45deg) translate(7px, -7px)' : 'none',
             }}
@@ -290,10 +290,10 @@ function LanguageSwitch() {
         onClick={() => setLanguage('en')}
         style={{
           padding: '0.375rem 0.75rem',
-          background: language === 'en' ? 'rgba(212, 175, 55, 0.2)' : 'transparent',
-          border: `1px solid ${language === 'en' ? 'var(--gold)' : 'var(--border-glow)'}`,
+          background: language === 'en' ? 'rgba(214, 178, 94, 0.15)' : 'transparent',
+          border: `1px solid ${language === 'en' ? 'var(--amber)' : 'var(--border-glow)'}`,
           borderRadius: '0.375rem',
-          color: language === 'en' ? 'var(--gold)' : 'var(--text-secondary)',
+          color: language === 'en' ? 'var(--amber)' : 'var(--text-secondary)',
           fontWeight: 600,
           fontSize: '0.875rem',
           cursor: 'pointer',
@@ -307,10 +307,10 @@ function LanguageSwitch() {
         onClick={() => setLanguage('ro')}
         style={{
           padding: '0.375rem 0.75rem',
-          background: language === 'ro' ? 'rgba(212, 175, 55, 0.2)' : 'transparent',
-          border: `1px solid ${language === 'ro' ? 'var(--gold)' : 'var(--border-glow)'}`,
+          background: language === 'ro' ? 'rgba(214, 178, 94, 0.15)' : 'transparent',
+          border: `1px solid ${language === 'ro' ? 'var(--amber)' : 'var(--border-glow)'}`,
           borderRadius: '0.375rem',
-          color: language === 'ro' ? 'var(--gold)' : 'var(--text-secondary)',
+          color: language === 'ro' ? 'var(--amber)' : 'var(--text-secondary)',
           fontWeight: 600,
           fontSize: '0.875rem',
           cursor: 'pointer',

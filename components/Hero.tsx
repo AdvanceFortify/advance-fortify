@@ -45,7 +45,7 @@ export default function Hero() {
                 fontWeight: 800,
                 lineHeight: 1.2,
                 marginBottom: '1.5rem',
-                background: 'linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%)',
+                background: 'linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -114,7 +114,7 @@ export default function Hero() {
             >
               <div style={{ display: 'flex', gap: '0.25rem' }}>
                 {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: 'var(--gold)', fontSize: '1.25rem' }}>
+                  <span key={i} style={{ color: 'var(--amber)', fontSize: '1.25rem' }}>
                     ★
                   </span>
                 ))}
@@ -205,7 +205,7 @@ export default function Hero() {
           transform: translate(-50%, -50%);
           width: 120%;
           height: 120%;
-          background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(255, 140, 66, 0.2) 50%, transparent 70%);
+          background: radial-gradient(circle, rgba(255, 179, 71, 0.3) 0%, rgba(214, 178, 94, 0.15) 50%, transparent 70%);
           border-radius: 50%;
           filter: blur(40px);
           animation: logoGlow 3s ease-in-out infinite alternate;
@@ -221,7 +221,7 @@ export default function Hero() {
           transform: translate(-50%, -50%);
           width: 110%;
           height: 110%;
-          background: radial-gradient(circle, rgba(212, 175, 55, 0.3) 0%, transparent 60%);
+          background: radial-gradient(circle, rgba(214, 178, 94, 0.25) 0%, transparent 60%);
           border-radius: 50%;
           filter: blur(30px);
           animation: logoGlow 4s ease-in-out infinite alternate-reverse;
@@ -230,7 +230,7 @@ export default function Hero() {
         }
 
         .logo-container {
-          filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 60px rgba(255, 140, 66, 0.3));
+          filter: drop-shadow(0 0 30px rgba(255, 179, 71, 0.4)) drop-shadow(0 0 60px rgba(214, 178, 94, 0.25));
         }
 
         /* Force transparency on ALL elements inside logo-container and wrapper */

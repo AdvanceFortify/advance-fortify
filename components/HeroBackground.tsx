@@ -55,11 +55,11 @@ export default function HeroBackground() {
           left: 0,
           width: '100%',
           height: '100%',
-          background: 'radial-gradient(ellipse at center, #050508 0%, #0a0515 30%, #0f0a1a 60%, #050508 100%)',
+          background: 'radial-gradient(ellipse at center, #07060B 0%, #0C0B12 30%, #07060B 60%, #07060B 100%)',
         }}
       />
 
-      {/* Deep violet nebula layer */}
+      {/* Purple nebula layer */}
       <div
         style={{
           position: 'absolute',
@@ -67,7 +67,7 @@ export default function HeroBackground() {
           left: '20%',
           width: '1000px',
           height: '1000px',
-          background: 'radial-gradient(circle, rgba(75, 0, 130, 0.2) 0%, rgba(138, 43, 226, 0.1) 30%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(110, 58, 242, 0.15) 0%, rgba(110, 58, 242, 0.08) 30%, transparent 70%)',
           borderRadius: '50%',
           filter: 'blur(100px)',
           transform: 'translate(calc(var(--parallax-x, 0px) * 0.25), calc(var(--parallax-y, 0px) * 0.25))',
@@ -75,7 +75,7 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Gold energy nebula */}
+      {/* Amber energy nebula */}
       <div
         style={{
           position: 'absolute',
@@ -83,7 +83,7 @@ export default function HeroBackground() {
           right: '10%',
           width: '900px',
           height: '900px',
-          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.25) 0%, rgba(255, 140, 66, 0.15) 40%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255, 179, 71, 0.18) 0%, rgba(214, 178, 94, 0.12) 40%, transparent 70%)',
           borderRadius: '50%',
           filter: 'blur(90px)',
           transform: 'translate(calc(var(--parallax-x, 0px) * -0.2), calc(var(--parallax-y, 0px) * -0.2))',
@@ -91,7 +91,7 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Orange energy core */}
+      {/* Amber energy core */}
       <div
         style={{
           position: 'absolute',
@@ -99,7 +99,7 @@ export default function HeroBackground() {
           left: '50%',
           width: '700px',
           height: '700px',
-          background: 'radial-gradient(circle, rgba(255, 140, 66, 0.2) 0%, rgba(212, 175, 55, 0.1) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255, 179, 71, 0.15) 0%, rgba(214, 178, 94, 0.08) 50%, transparent 70%)',
           borderRadius: '50%',
           filter: 'blur(110px)',
           transform: 'translate(calc(-50% + var(--parallax-x, 0px) * 0.15), calc(-50% + var(--parallax-y, 0px) * 0.15))',
@@ -107,7 +107,7 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Purple accent nebula */}
+      {/* Magenta accent nebula */}
       <div
         style={{
           position: 'absolute',
@@ -115,7 +115,7 @@ export default function HeroBackground() {
           left: '15%',
           width: '800px',
           height: '800px',
-          background: 'radial-gradient(circle, rgba(138, 43, 226, 0.15) 0%, rgba(75, 0, 130, 0.08) 50%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(228, 69, 168, 0.12) 0%, rgba(228, 69, 168, 0.06) 50%, transparent 70%)',
           borderRadius: '50%',
           filter: 'blur(120px)',
           transform: 'translate(calc(var(--parallax-x, 0px) * 0.1), calc(var(--parallax-y, 0px) * 0.1))',
@@ -148,7 +148,7 @@ export default function HeroBackground() {
           left: '10%',
           width: '2px',
           height: '200px',
-          background: 'linear-gradient(to bottom, transparent, rgba(212, 175, 55, 0.4), transparent)',
+          background: 'linear-gradient(to bottom, transparent, rgba(214, 178, 94, 0.35), transparent)',
           transform: 'rotate(45deg)',
           animation: 'glintMove1 8s ease-in-out infinite',
           opacity: 0.3,
@@ -162,7 +162,7 @@ export default function HeroBackground() {
           right: '20%',
           width: '2px',
           height: '150px',
-          background: 'linear-gradient(to bottom, transparent, rgba(255, 140, 66, 0.3), transparent)',
+          background: 'linear-gradient(to bottom, transparent, rgba(255, 179, 71, 0.25), transparent)',
           transform: 'rotate(-30deg)',
           animation: 'glintMove2 10s ease-in-out infinite',
           opacity: 0.25,
@@ -176,7 +176,7 @@ export default function HeroBackground() {
           right: '15%',
           width: '1px',
           height: '100px',
-          background: 'linear-gradient(to bottom, transparent, rgba(138, 43, 226, 0.3), transparent)',
+          background: 'linear-gradient(to bottom, transparent, rgba(228, 69, 168, 0.25), transparent)',
           transform: 'rotate(60deg)',
           animation: 'glintMove3 12s ease-in-out infinite',
           opacity: 0.2,
@@ -193,9 +193,9 @@ export default function HeroBackground() {
           width: '100%',
           height: '45%',
           backgroundImage: `
-            repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(212, 175, 55, 0.04) 28px, rgba(212, 175, 55, 0.04) 29px, transparent 29px, transparent 57px),
-            repeating-linear-gradient(60deg, transparent, transparent 28px, rgba(255, 140, 66, 0.03) 28px, rgba(255, 140, 66, 0.03) 29px, transparent 29px, transparent 57px),
-            repeating-linear-gradient(120deg, transparent, transparent 28px, rgba(212, 175, 55, 0.02) 28px, rgba(212, 175, 55, 0.02) 29px, transparent 29px, transparent 57px)
+            repeating-linear-gradient(0deg, transparent, transparent 28px, rgba(214, 178, 94, 0.03) 28px, rgba(214, 178, 94, 0.03) 29px, transparent 29px, transparent 57px),
+            repeating-linear-gradient(60deg, transparent, transparent 28px, rgba(255, 179, 71, 0.025) 28px, rgba(255, 179, 71, 0.025) 29px, transparent 29px, transparent 57px),
+            repeating-linear-gradient(120deg, transparent, transparent 28px, rgba(214, 178, 94, 0.02) 28px, rgba(214, 178, 94, 0.02) 29px, transparent 29px, transparent 57px)
           `,
           backgroundSize: '57px 57px',
           transform: 'perspective(1000px) rotateX(75deg) translateY(15%)',

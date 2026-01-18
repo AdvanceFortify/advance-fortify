@@ -42,7 +42,7 @@ export default function ParallaxBackground() {
           position: 'absolute',
           width: '600px',
           height: '600px',
-          background: 'radial-gradient(circle, rgba(212, 175, 55, 0.2) 0%, transparent 70%)',
+          background: 'radial-gradient(circle, rgba(255, 179, 71, 0.15) 0%, transparent 70%)',
           borderRadius: '50%',
           top: 'calc(var(--mouse-y, 50%) - 300px)',
           left: 'calc(var(--mouse-x, 50%) - 300px)',

@@ -25,7 +25,7 @@ export default function SiteFooter() {
   return (
     <footer
       style={{
-        background: 'rgba(5, 5, 8, 0.8)',
+        background: 'var(--panel)',
         backdropFilter: 'blur(20px)',
         borderTop: '1px solid var(--border-glow)',
         padding: '4rem 0 2rem',
@@ -47,7 +47,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--gold)',
+                color: 'var(--amber)',
                 marginBottom: '1rem',
               }}
             >
@@ -71,7 +71,7 @@ export default function SiteFooter() {
                       textDecoration: 'none',
                       transition: 'color 0.3s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--amber)')}
                     onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
                   >
                     {link.label}
@@ -87,7 +87,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--gold)',
+                color: 'var(--amber)',
                 marginBottom: '1rem',
               }}
             >
@@ -110,7 +110,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--gold)',
+                color: 'var(--amber)',
                 marginBottom: '1rem',
               }}
             >
@@ -133,7 +133,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--gold)',
+                color: 'var(--amber)',
                 marginBottom: '1rem',
               }}
             >
@@ -186,7 +186,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--gold)',
+                color: 'var(--amber)',
                 marginBottom: '1rem',
               }}
             >
@@ -210,7 +210,7 @@ export default function SiteFooter() {
                     justifyContent: 'center',
                     width: '40px',
                     height: '40px',
-                    background: 'rgba(212, 175, 55, 0.1)',
+                    background: 'rgba(214, 178, 94, 0.08)',
                     border: '1px solid var(--border-glow)',
                     borderRadius: '50%',
                     fontSize: '1.25rem',
@@ -218,12 +218,12 @@ export default function SiteFooter() {
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(212, 175, 55, 0.2)';
-                    e.currentTarget.style.borderColor = 'var(--gold)';
+                    e.currentTarget.style.background = 'rgba(214, 178, 94, 0.15)';
+                    e.currentTarget.style.borderColor = 'var(--amber)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(212, 175, 55, 0.1)';
+                    e.currentTarget.style.background = 'rgba(214, 178, 94, 0.08)';
                     e.currentTarget.style.borderColor = 'var(--border-glow)';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}

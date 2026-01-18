@@ -34,7 +34,7 @@ export default function ServiceCards() {
     <section
       style={{
         padding: '6rem 0',
-        background: 'rgba(5, 5, 8, 0.3)',
+        background: 'transparent',
       }}
     >
       <div className="container">
@@ -78,7 +78,7 @@ export default function ServiceCards() {
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   marginBottom: '1rem',
-                  color: 'var(--gold)',
+                  color: 'var(--amber)',
                 }}
               >
                 {service.title}
