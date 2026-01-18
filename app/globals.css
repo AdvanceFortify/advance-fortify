@@ -294,21 +294,81 @@ img {
 }
 
 /* Ensure Next.js Image components are transparent - aggressive override */
-.hero-logo-container img,
+.hero-logo-container,
+.hero-logo-container *,
+.logo-wrapper,
+.logo-wrapper *,
+.logo-container,
+.logo-container * {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+}
+
+/* Specifically target Next.js Image wrapper spans and divs */
 .hero-logo-container span,
 .hero-logo-container div,
-.hero-logo-container * {
+.hero-logo-container img,
+.logo-wrapper span,
+.logo-wrapper div,
+.logo-container span,
+.logo-container div,
+.logo-container img {
+  background: transparent !important;
+  background-color: transparent !important;
+  background-image: none !important;
+  box-shadow: none !important;
+}
+
+/* Target Next.js Image internal structure with inline styles */
+.hero-logo-container span[style],
+.hero-logo-container div[style],
+.logo-wrapper span[style],
+.logo-wrapper div[style],
+.logo-container span[style],
+.logo-container div[style] {
   background: transparent !important;
   background-color: transparent !important;
 }
 
-/* Specifically target Next.js Image wrapper spans */
+/* Target specific Next.js Image wrapper attributes */
 .hero-logo-container span[style*='position'],
 .hero-logo-container span[style*='display'],
 .hero-logo-container span[style*='overflow'],
 .hero-logo-container span[style*='width'],
 .hero-logo-container span[style*='height'],
-.hero-logo-container span[style*='inset'] {
+.hero-logo-container span[style*='inset'],
+.logo-wrapper span[style*='position'],
+.logo-wrapper span[style*='display'],
+.logo-wrapper span[style*='overflow'],
+.logo-wrapper span[style*='width'],
+.logo-wrapper span[style*='height'],
+.logo-wrapper span[style*='inset'],
+.logo-container span[style*='position'],
+.logo-container span[style*='display'],
+.logo-container span[style*='overflow'],
+.logo-container span[style*='width'],
+.logo-container span[style*='height'],
+.logo-container span[style*='inset'] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Target Next.js Image specific classes */
+.hero-logo-container [class*='next-image'],
+.logo-wrapper [class*='next-image'],
+.logo-container [class*='next-image'],
+.hero-logo-container [class*='next'],
+.logo-wrapper [class*='next'],
+.logo-container [class*='next'] {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Ensure direct children are transparent */
+.logo-wrapper > *,
+.logo-container > *,
+.hero-logo-container > * {
   background: transparent !important;
   background-color: transparent !important;
 }

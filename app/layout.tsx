@@ -5,6 +5,7 @@ import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import ParallaxBackground from "@/components/ParallaxBackground";
+import GlobalParticles from "@/components/GlobalParticles";
 
 export const metadata: Metadata = {
   title: "Advance Fortify | Premium Web Design, SEO & Marketing",
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <LanguageProvider>
+          <GlobalParticles />
           <ParallaxBackground />
           <SiteHeader />
           <main>{children}</main>

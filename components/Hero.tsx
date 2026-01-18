@@ -167,9 +167,11 @@ export default function Hero() {
                   style={{
                     objectFit: 'contain',
                     filter: 'brightness(1.1) contrast(1.05)',
+                    backgroundColor: 'transparent',
                   }}
                   priority
                   sizes="(max-width: 768px) 100vw, 550px"
+                  className="logo-image"
                 />
                 
                 {/* Light reflection overlay */}
@@ -231,19 +233,51 @@ export default function Hero() {
           filter: drop-shadow(0 0 30px rgba(212, 175, 55, 0.5)) drop-shadow(0 0 60px rgba(255, 140, 66, 0.3));
         }
 
-        /* Force transparency on ALL elements inside logo-container */
+        /* Force transparency on ALL elements inside logo-container and wrapper */
+        .logo-wrapper :global(*),
         .logo-container :global(*) {
+          background: transparent !important;
+          background-color: transparent !important;
+          background-image: none !important;
+        }
+
+        /* Specifically target Next.js Image wrapper structure - all possible wrappers */
+        .logo-wrapper :global(span),
+        .logo-wrapper :global(div),
+        .logo-container :global(span),
+        .logo-container :global(div),
+        .logo-container :global(img),
+        .logo-image,
+        .logo-image :global(*) {
+          background: transparent !important;
+          background-color: transparent !important;
+          background-image: none !important;
+          box-shadow: none !important;
+        }
+
+        /* Target Next.js Image internal structure more aggressively */
+        .logo-container :global(span[style]),
+        .logo-container :global(div[style]),
+        .logo-wrapper :global(span[style]),
+        .logo-wrapper :global(div[style]) {
           background: transparent !important;
           background-color: transparent !important;
         }
 
-        /* Specifically target Next.js Image wrapper structure */
-        .logo-container :global(span),
-        .logo-container :global(div),
-        .logo-container :global(img) {
+        /* Target Next.js Image specific classes if they exist */
+        .logo-container :global([class*='next-image']),
+        .logo-wrapper :global([class*='next-image']),
+        .logo-container :global([class*='next']),
+        .logo-wrapper :global([class*='next']) {
           background: transparent !important;
           background-color: transparent !important;
-          background-image: none !important;
+        }
+
+        /* Ensure all possible wrapper combinations are transparent */
+        .logo-wrapper > :global(*),
+        .logo-container > :global(*) {
+          background: transparent !important;
+          background-color: transparent !important;
         }
 
         @keyframes logoFloat {

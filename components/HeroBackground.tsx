@@ -4,9 +4,7 @@ import { useEffect, useRef } from 'react';
 
 export default function HeroBackground() {
   const containerRef = useRef<HTMLDivElement>(null);
-  const canvasRef = useRef<HTMLCanvasElement>(null);
   const mouseRef = useRef({ x: 50, y: 50 });
-  const animationFrameRef = useRef<number | undefined>(undefined);
 
   useEffect(() => {
     const handleMouseMove = (e: MouseEvent) => {
@@ -32,99 +30,6 @@ export default function HeroBackground() {
 
     window.addEventListener('mousemove', handleMouseMove);
     return () => window.removeEventListener('mousemove', handleMouseMove);
-  }, []);
-
-  // Canvas spark particles
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-
-    const ctx = canvas.getContext('2d');
-    if (!ctx) return;
-
-    const resizeCanvas = () => {
-      if (!canvas || !containerRef.current) return;
-      const rect = containerRef.current.getBoundingClientRect();
-      canvas.width = rect.width;
-      canvas.height = rect.height;
-    };
-
-    resizeCanvas();
-    window.addEventListener('resize', resizeCanvas);
-
-    // Particle system
-    const particles: Array<{
-      x: number;
-      y: number;
-      vx: number;
-      vy: number;
-      size: number;
-      opacity: number;
-      life: number;
-      maxLife: number;
-    }> = [];
-
-    const particleCount = window.innerWidth < 768 ? 20 : 40;
-
-    // Initialize particles
-    for (let i = 0; i < particleCount; i++) {
-      particles.push({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3,
-        size: Math.random() * 2 + 0.5,
-        opacity: Math.random() * 0.5 + 0.3,
-        life: Math.random(),
-        maxLife: Math.random() * 2 + 1,
-      });
-    }
-
-    const animate = () => {
-      if (!ctx || !canvas) return;
-
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-
-      particles.forEach((particle) => {
-        // Update position
-        particle.x += particle.vx;
-        particle.y += particle.vy;
-        particle.life += 0.01;
-
-        // Wrap around edges
-        if (particle.x < 0) particle.x = canvas.width;
-        if (particle.x > canvas.width) particle.x = 0;
-        if (particle.y < 0) particle.y = canvas.height;
-        if (particle.y > canvas.height) particle.y = 0;
-
-        // Pulsing opacity
-        const pulse = Math.sin(particle.life) * 0.3 + 0.7;
-        const currentOpacity = particle.opacity * pulse;
-
-        // Draw particle
-        ctx.beginPath();
-        ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(212, 175, 55, ${currentOpacity})`;
-        ctx.fill();
-
-        // Add glow
-        ctx.shadowBlur = 10;
-        ctx.shadowColor = `rgba(212, 175, 55, ${currentOpacity * 0.5})`;
-        ctx.fill();
-        ctx.shadowBlur = 0;
-      });
-
-      animationFrameRef.current = requestAnimationFrame(animate);
-    };
-
-    animate();
-
-    return () => {
-      window.removeEventListener('resize', resizeCanvas);
-      if (animationFrameRef.current) {
-        cancelAnimationFrame(animationFrameRef.current);
-      }
-    };
   }, []);
 
   return (
@@ -233,18 +138,6 @@ export default function HeroBackground() {
         }}
       />
 
-      {/* Canvas spark particles */}
-      <canvas
-        ref={canvasRef}
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          width: '100%',
-          height: '100%',
-          opacity: 0.6,
-        }}
-      />
 
       {/* Animated glints/streaks */}
       <div
@@ -393,9 +286,6 @@ export default function HeroBackground() {
           }
           .hex-grid-floor {
             opacity: 0.3 !important;
-          }
-          canvas {
-            opacity: 0.4 !important;
           }
           .glint-1,
           .glint-2,
