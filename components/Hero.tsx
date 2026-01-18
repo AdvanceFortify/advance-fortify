@@ -161,7 +161,7 @@ export default function Hero() {
                 }}
               >
                 <Image
-                  src="/brand/logo.png.png"
+                  src="/brand/logo.png"
                   alt="Advance Fortify Logo"
                   fill
                   style={{
