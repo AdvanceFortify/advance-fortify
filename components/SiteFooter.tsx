@@ -47,7 +47,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--amber)',
+                color: 'var(--accent-1)',
                 marginBottom: '1rem',
               }}
             >
@@ -71,8 +71,8 @@ export default function SiteFooter() {
                       textDecoration: 'none',
                       transition: 'color 0.3s ease',
                     }}
-                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--amber)')}
-                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                    onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-1)')}
+                    onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                   >
                     {link.label}
                   </Link>
@@ -87,7 +87,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--amber)',
+                color: 'var(--accent-1)',
                 marginBottom: '1rem',
               }}
             >
@@ -110,7 +110,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--amber)',
+                color: 'var(--accent-1)',
                 marginBottom: '1rem',
               }}
             >
@@ -133,7 +133,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--amber)',
+                color: 'var(--accent-1)',
                 marginBottom: '1rem',
               }}
             >
@@ -156,8 +156,8 @@ export default function SiteFooter() {
                     textDecoration: 'none',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-1)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                 >
                   admin@advancefortify.com
                 </a>
@@ -171,8 +171,8 @@ export default function SiteFooter() {
                     textDecoration: 'none',
                     transition: 'color 0.3s ease',
                   }}
-                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--gold)')}
-                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--text-secondary)')}
+                  onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-1)')}
+                  onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                 >
                   +40 748 979 607
                 </a>
@@ -186,7 +186,7 @@ export default function SiteFooter() {
               style={{
                 fontSize: '1rem',
                 fontWeight: 600,
-                color: 'var(--amber)',
+                color: 'var(--accent-1)',
                 marginBottom: '1rem',
               }}
             >
@@ -210,21 +210,21 @@ export default function SiteFooter() {
                     justifyContent: 'center',
                     width: '40px',
                     height: '40px',
-                    background: 'rgba(214, 178, 94, 0.08)',
-                    border: '1px solid var(--border-glow)',
+                    background: 'var(--surface)',
+                    border: '1px solid var(--border)',
                     borderRadius: '50%',
                     fontSize: '1.25rem',
                     textDecoration: 'none',
                     transition: 'all 0.3s ease',
                   }}
                   onMouseEnter={(e) => {
-                    e.currentTarget.style.background = 'rgba(214, 178, 94, 0.15)';
-                    e.currentTarget.style.borderColor = 'var(--amber)';
+                    e.currentTarget.style.background = 'var(--surface-2)';
+                    e.currentTarget.style.borderColor = 'var(--accent-1)';
                     e.currentTarget.style.transform = 'translateY(-2px)';
                   }}
                   onMouseLeave={(e) => {
-                    e.currentTarget.style.background = 'rgba(214, 178, 94, 0.08)';
-                    e.currentTarget.style.borderColor = 'var(--border-glow)';
+                    e.currentTarget.style.background = 'var(--surface)';
+                    e.currentTarget.style.borderColor = 'var(--border)';
                     e.currentTarget.style.transform = 'translateY(0)';
                   }}
                 >

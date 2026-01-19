@@ -69,7 +69,7 @@ export default function PricingPage() {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 800,
               marginBottom: '1.5rem',
-              background: 'linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 50%, var(--accent-2) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -112,7 +112,7 @@ export default function PricingPage() {
                 style={{
                   padding: '2.5rem',
                   position: 'relative',
-                  border: tier.popular ? '2px solid var(--gold)' : '1px solid var(--border-glow)',
+                  border: tier.popular ? '2px solid var(--accent-1)' : '1px solid var(--border)',
                   boxShadow: tier.popular ? 'var(--shadow-glow-strong)' : 'var(--shadow-glow)',
                 }}
               >
@@ -139,7 +139,7 @@ export default function PricingPage() {
                     fontSize: '2rem',
                     fontWeight: 700,
                     marginBottom: '0.5rem',
-                    color: 'var(--gold)',
+                    color: 'var(--accent-1)',
                   }}
                 >
                   {tier.name}

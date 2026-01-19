@@ -4,7 +4,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
-import HeroBackground from './HeroBackground';
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -22,12 +21,10 @@ export default function Hero() {
         minHeight: '90vh',
         display: 'flex',
         alignItems: 'center',
-        overflow: 'hidden',
-        background: 'transparent',
-        isolation: 'isolate',
+        overflow: 'visible',
+        background: 'var(--bg-0)',
       }}
     >
-      <HeroBackground />
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div
@@ -41,14 +38,12 @@ export default function Hero() {
           <div style={{ order: 1 }}>
             <h1
               style={{
-                fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-                fontWeight: 800,
-                lineHeight: 1.2,
+                fontSize: 'clamp(2.5rem, 5vw, 4.5rem)',
+                fontWeight: 900,
+                lineHeight: 1.1,
                 marginBottom: '1.5rem',
-                background: 'linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                color: 'var(--text)',
+                letterSpacing: '-0.02em',
               }}
             >
               {t.home.hero.headline}
@@ -56,9 +51,9 @@ export default function Hero() {
             <p
               style={{
                 fontSize: '1.25rem',
-                color: 'var(--text-secondary)',
+                color: 'var(--muted)',
                 marginBottom: '2.5rem',
-                lineHeight: 1.6,
+                lineHeight: 1.7,
                 maxWidth: '600px',
               }}
             >
@@ -83,6 +78,7 @@ export default function Hero() {
                   alignItems: 'center',
                   gap: '0.5rem',
                   textDecoration: 'none',
+                  boxShadow: 'none',
                 }}
               >
                 <span>💬</span>
@@ -96,6 +92,7 @@ export default function Hero() {
                   alignItems: 'center',
                   gap: '0.5rem',
                   textDecoration: 'none',
+                  boxShadow: 'none',
                 }}
               >
                 <span>🎨</span>
@@ -103,24 +100,32 @@ export default function Hero() {
               </Link>
             </div>
 
-            <div
-              style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '1rem',
-                color: 'var(--text-secondary)',
-                fontSize: '0.9375rem',
-              }}
-            >
-              <div style={{ display: 'flex', gap: '0.25rem' }}>
-                {[...Array(5)].map((_, i) => (
-                  <span key={i} style={{ color: 'var(--amber)', fontSize: '1.25rem' }}>
-                    ★
-                  </span>
-                ))}
+            {t.home.hero.trust && (
+              <div
+                style={{
+                  display: 'flex',
+                  alignItems: 'center',
+                  gap: '1rem',
+                  color: 'var(--text-secondary)',
+                  fontSize: '0.9375rem',
+                }}
+              >
+                <div style={{ display: 'flex', gap: '0.25rem' }}>
+                  {[...Array(5)].map((_, i) => (
+                    <span 
+                      key={i} 
+                      style={{ 
+                        color: 'var(--accent-1)', 
+                        fontSize: '1.25rem',
+                      }}
+                    >
+                      ★
+                    </span>
+                  ))}
+                </div>
+                <span>{t.home.hero.trust}</span>
               </div>
-              <span>{t.home.hero.trust}</span>
-            </div>
+            )}
           </div>
 
           <div
@@ -139,7 +144,7 @@ export default function Hero() {
               style={{
                 position: 'relative',
                 width: '100%',
-                maxWidth: '600px',
+                maxWidth: '780px',
                 aspectRatio: '1',
                 display: 'flex',
                 alignItems: 'center',
@@ -152,8 +157,8 @@ export default function Hero() {
                 className="logo-container"
                 style={{
                   position: 'relative',
-                  width: '90%',
-                  maxWidth: '550px',
+                  width: '100%',
+                  maxWidth: '860px',
                   aspectRatio: '1',
                   zIndex: 2,
                   animation: 'logoFloat 6s ease-in-out infinite',
@@ -166,30 +171,14 @@ export default function Hero() {
                   fill
                   style={{
                     objectFit: 'contain',
-                    filter: 'brightness(1.1) contrast(1.05)',
+                    filter: 'brightness(1.15) contrast(1.1)',
                     backgroundColor: 'transparent',
                   }}
                   priority
-                  sizes="(max-width: 768px) 100vw, 550px"
+                  sizes="(max-width: 768px) 100vw, 860px"
                   className="logo-image"
                 />
                 
-                {/* Light reflection overlay */}
-                <div
-                  style={{
-                    position: 'absolute',
-                    top: '20%',
-                    left: '30%',
-                    width: '40%',
-                    height: '30%',
-                    background: 'linear-gradient(135deg, rgba(255, 255, 255, 0.3) 0%, transparent 100%)',
-                    borderRadius: '50%',
-                    filter: 'blur(20px)',
-                    animation: 'lightReflection 4s ease-in-out infinite',
-                    pointerEvents: 'none',
-                    zIndex: 1,
-                  }}
-                />
               </div>
             </div>
           </div>
@@ -197,41 +186,6 @@ export default function Hero() {
       </div>
 
       <style jsx>{`
-        .logo-wrapper::before {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 120%;
-          height: 120%;
-          background: radial-gradient(circle, rgba(255, 179, 71, 0.3) 0%, rgba(214, 178, 94, 0.15) 50%, transparent 70%);
-          border-radius: 50%;
-          filter: blur(40px);
-          animation: logoGlow 3s ease-in-out infinite alternate;
-          z-index: 0;
-          pointer-events: none;
-        }
-
-        .logo-wrapper::after {
-          content: '';
-          position: absolute;
-          top: 50%;
-          left: 50%;
-          transform: translate(-50%, -50%);
-          width: 110%;
-          height: 110%;
-          background: radial-gradient(circle, rgba(214, 178, 94, 0.25) 0%, transparent 60%);
-          border-radius: 50%;
-          filter: blur(30px);
-          animation: logoGlow 4s ease-in-out infinite alternate-reverse;
-          z-index: 1;
-          pointer-events: none;
-        }
-
-        .logo-container {
-          filter: drop-shadow(0 0 30px rgba(255, 179, 71, 0.4)) drop-shadow(0 0 60px rgba(214, 178, 94, 0.25));
-        }
 
         /* Force transparency on ALL elements inside logo-container and wrapper */
         .logo-wrapper :global(*),
@@ -289,27 +243,6 @@ export default function Hero() {
           }
         }
 
-        @keyframes logoGlow {
-          0% {
-            opacity: 0.6;
-            transform: translate(-50%, -50%) scale(1);
-          }
-          100% {
-            opacity: 0.9;
-            transform: translate(-50%, -50%) scale(1.05);
-          }
-        }
-
-        @keyframes lightReflection {
-          0%, 100% {
-            opacity: 0.3;
-            transform: translate(-10%, -10%);
-          }
-          50% {
-            opacity: 0.6;
-            transform: translate(10%, 10%);
-          }
-        }
 
         @media (min-width: 1024px) {
           div[style*='grid-template-columns'] {
@@ -332,7 +265,7 @@ export default function Hero() {
             order: 2 !important;
           }
           .hero-logo-container > div {
-            max-width: 400px !important;
+            max-width: 520px !important;
           }
         }
 
@@ -341,7 +274,7 @@ export default function Hero() {
             min-height: 250px !important;
           }
           .hero-logo-container > div {
-            max-width: 300px !important;
+            max-width: 380px !important;
           }
         }
       `}</style>

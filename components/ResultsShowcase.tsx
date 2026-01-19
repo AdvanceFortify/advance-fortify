@@ -12,20 +12,41 @@ export default function ResultsShowcase() {
     <section
       style={{
         padding: '6rem 0',
+        background: 'var(--bg-0)',
       }}
     >
       <div className="container">
-        <h2
-          style={{
-            fontSize: 'clamp(2rem, 4vw, 3rem)',
-            fontWeight: 700,
-            textAlign: 'center',
-            marginBottom: '3rem',
-            color: 'var(--text-primary)',
-          }}
-        >
-          {t.home.results.title}
-        </h2>
+        <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
+          <div
+            style={{
+              display: 'inline-block',
+              width: '60px',
+              height: '2px',
+              background: 'linear-gradient(90deg, transparent, var(--accent-1), transparent)',
+              marginBottom: '1rem',
+            }}
+          />
+          <h2
+            style={{
+              fontSize: 'clamp(2rem, 4vw, 3rem)',
+              fontWeight: 700,
+              textAlign: 'center',
+              marginBottom: '1rem',
+              color: 'var(--text)',
+            }}
+          >
+            {t.home.results.title}
+          </h2>
+          <div
+            style={{
+              display: 'inline-block',
+              width: '60px',
+              height: '2px',
+              background: 'linear-gradient(90deg, transparent, var(--accent-1), transparent)',
+              marginTop: '1rem',
+            }}
+          />
+        </div>
 
         <div
           style={{
@@ -35,20 +56,18 @@ export default function ResultsShowcase() {
             marginBottom: '3rem',
           }}
         >
-          <div
-            className="card"
-            style={{
-              position: 'relative',
-              overflow: 'hidden',
-              padding: '3rem 2rem',
-              textAlign: 'center',
-            }}
-          >
+            <div
+              className="card"
+              style={{
+                padding: '3rem 2rem',
+                textAlign: 'center',
+              }}
+            >
             <div
               style={{
                 fontSize: '4rem',
-                fontWeight: 800,
-                background: 'linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%)',
+                fontWeight: 900,
+                background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -59,7 +78,7 @@ export default function ResultsShowcase() {
             </div>
             <p
               style={{
-                color: 'var(--text-secondary)',
+                color: 'var(--muted)',
                 fontSize: '1.125rem',
               }}
             >
@@ -67,20 +86,18 @@ export default function ResultsShowcase() {
             </p>
           </div>
 
-          <div
-            className="card"
-            style={{
-              position: 'relative',
-              overflow: 'hidden',
-              padding: '3rem 2rem',
-              textAlign: 'center',
-            }}
-          >
+            <div
+              className="card"
+              style={{
+                padding: '3rem 2rem',
+                textAlign: 'center',
+              }}
+            >
             <div
               style={{
                 fontSize: '4rem',
-                fontWeight: 800,
-                background: 'linear-gradient(135deg, #FFB347 0%, #D6B25E 55%, #E445A8 120%)',
+                fontWeight: 900,
+                background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 100%)',
                 WebkitBackgroundClip: 'text',
                 WebkitTextFillColor: 'transparent',
                 backgroundClip: 'text',
@@ -91,8 +108,10 @@ export default function ResultsShowcase() {
             </div>
             <p
               style={{
-                color: 'var(--text-secondary)',
+                color: 'var(--muted)',
                 fontSize: '1.125rem',
+                position: 'relative',
+                zIndex: 1,
               }}
             >
               Reduction in cost per acquisition

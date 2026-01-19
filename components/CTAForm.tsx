@@ -36,7 +36,8 @@ export default function CTAForm() {
     <section
       style={{
         padding: '6rem 0',
-        background: 'transparent',
+        background: 'var(--bg-1)',
+        position: 'relative',
       }}
     >
       <div className="container">
@@ -52,7 +53,7 @@ export default function CTAForm() {
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: '1rem',
-              color: 'var(--text-primary)',
+              color: 'var(--text)',
             }}
           >
             {t.home.cta.title}
@@ -60,7 +61,7 @@ export default function CTAForm() {
           <p
             style={{
               textAlign: 'center',
-              color: 'var(--text-secondary)',
+              color: 'var(--muted)',
               marginBottom: '3rem',
               fontSize: '1.125rem',
             }}
@@ -76,17 +77,17 @@ export default function CTAForm() {
             }}
           >
             {submitted ? (
-              <div
-                style={{
-                  textAlign: 'center',
-                  padding: '2rem',
-                  color: 'var(--amber)',
-                  fontSize: '1.125rem',
-                  fontWeight: 600,
-                }}
-              >
-                {t.home.cta.success}
-              </div>
+                <div
+                  style={{
+                    textAlign: 'center',
+                    padding: '2rem',
+                    color: 'var(--accent-1)',
+                    fontSize: '1.125rem',
+                    fontWeight: 600,
+                  }}
+                >
+                  {t.home.cta.success}
+                </div>
             ) : (
               <>
                 <div className="form-group">
@@ -102,11 +103,24 @@ export default function CTAForm() {
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder={t.home.cta.name}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      border: '1px solid var(--border)',
+                      color: 'var(--text)',
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'var(--accent-1)';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.15)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'var(--border)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="email" className="form-label">
+                  <label htmlFor="email" className="form-label" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
                     {t.home.cta.email}
                   </label>
                   <input
@@ -118,11 +132,24 @@ export default function CTAForm() {
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder={t.home.cta.email}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      border: '1px solid var(--border)',
+                      color: 'var(--text)',
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'var(--accent-1)';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.15)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'var(--border)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   />
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="projectType" className="form-label">
+                  <label htmlFor="projectType" className="form-label" style={{ color: 'rgba(255, 255, 255, 0.9)' }}>
                     {t.home.cta.projectType}
                   </label>
                   <select
@@ -132,6 +159,19 @@ export default function CTAForm() {
                     required
                     value={formData.projectType}
                     onChange={(e) => setFormData({ ...formData, projectType: e.target.value })}
+                    style={{
+                      background: 'rgba(255, 255, 255, 0.1)',
+                      border: '1px solid var(--border)',
+                      color: 'var(--text)',
+                    }}
+                    onFocus={(e) => {
+                      e.target.style.borderColor = 'var(--accent-1)';
+                      e.target.style.boxShadow = '0 0 0 3px rgba(212, 175, 55, 0.15)';
+                    }}
+                    onBlur={(e) => {
+                      e.target.style.borderColor = 'var(--border)';
+                      e.target.style.boxShadow = 'none';
+                    }}
                   >
                     <option value="">{t.home.cta.projectType}</option>
                     {projectTypes.map((type) => (

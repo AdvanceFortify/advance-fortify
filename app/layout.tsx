@@ -4,8 +4,8 @@ import "./globals.css";
 import SiteHeader from "@/components/SiteHeader";
 import SiteFooter from "@/components/SiteFooter";
 import { LanguageProvider } from "@/components/LanguageProvider";
-import ParallaxBackground from "@/components/ParallaxBackground";
-import GlobalParticles from "@/components/GlobalParticles";
+import CookieConsent from "@/components/CookieConsent";
+import GoogleAnalytics from "@/components/GoogleAnalytics";
 
 export const metadata: Metadata = {
   title: "Advance Fortify | Premium Web Design, SEO & Marketing",
@@ -29,11 +29,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       </head>
       <body>
         <LanguageProvider>
-          <GlobalParticles />
-          <ParallaxBackground />
+          <GoogleAnalytics />
           <SiteHeader />
           <main>{children}</main>
           <SiteFooter />
+          <CookieConsent />
         </LanguageProvider>
       </body>
     </html>

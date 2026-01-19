@@ -73,7 +73,7 @@ export default function GlobalParticles() {
         particlesRef.current.forEach((particle) => {
           ctx.beginPath();
           ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(214, 178, 94, ${particle.opacity})`;
+          ctx.fillStyle = `rgba(255, 191, 0, ${particle.opacity})`;
           ctx.fill();
         });
         // Re-request animation frame but with slower updates
@@ -102,12 +102,12 @@ export default function GlobalParticles() {
         // Draw particle
         ctx.beginPath();
         ctx.arc(particle.x, particle.y, particle.size, 0, Math.PI * 2);
-        ctx.fillStyle = `rgba(214, 178, 94, ${currentOpacity})`;
+        ctx.fillStyle = `rgba(255, 191, 0, ${currentOpacity})`;
         ctx.fill();
 
         // Add subtle glow
-        ctx.shadowBlur = 8;
-        ctx.shadowColor = `rgba(214, 178, 94, ${currentOpacity * 0.35})`;
+        ctx.shadowBlur = 6;
+        ctx.shadowColor = `rgba(255, 191, 0, ${currentOpacity * 0.3})`;
         ctx.fill();
         ctx.shadowBlur = 0;
       });
@@ -142,7 +142,7 @@ export default function GlobalParticles() {
         left: 0,
         width: '100%',
         height: '100%',
-        opacity: 0.5,
+        opacity: 0.4,
         zIndex: -1,
         pointerEvents: 'none',
       }}

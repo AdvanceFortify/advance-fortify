@@ -20,7 +20,7 @@ export default function AboutPage() {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 800,
               marginBottom: '1.5rem',
-              background: 'linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 50%, var(--accent-2) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -65,7 +65,7 @@ export default function AboutPage() {
                   fontSize: '2rem',
                   fontWeight: 700,
                   marginBottom: '1.5rem',
-                  color: 'var(--gold)',
+                  color: 'var(--accent-1)',
                 }}
               >
                 Our Mission
@@ -106,7 +106,7 @@ export default function AboutPage() {
                   fontSize: '2rem',
                   fontWeight: 700,
                   marginBottom: '1.5rem',
-                  color: 'var(--gold)',
+                  color: 'var(--accent-1)',
                 }}
               >
                 Why Choose Us

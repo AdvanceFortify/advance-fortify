@@ -49,7 +49,7 @@ export default function ContactPage() {
               fontSize: 'clamp(2.5rem, 5vw, 4rem)',
               fontWeight: 800,
               marginBottom: '1.5rem',
-              background: 'linear-gradient(135deg, var(--gold) 0%, var(--orange) 100%)',
+              background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 50%, var(--accent-2) 100%)',
               WebkitBackgroundClip: 'text',
               WebkitTextFillColor: 'transparent',
               backgroundClip: 'text',
@@ -104,7 +104,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: 'var(--gold)',
+                  color: 'var(--accent-1)',
                 }}
               >
                 {t.contact.whatsapp}
@@ -130,7 +130,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: 'var(--gold)',
+                  color: 'var(--accent-1)',
                 }}
               >
                 {t.contact.email}
@@ -155,7 +155,7 @@ export default function ContactPage() {
                 style={{
                   fontSize: '1.5rem',
                   fontWeight: 600,
-                  color: 'var(--gold)',
+                  color: 'var(--accent-1)',
                 }}
               >
                 {t.contact.telegram}
@@ -182,7 +182,7 @@ export default function ContactPage() {
                   fontSize: '1.75rem',
                   fontWeight: 600,
                   marginBottom: '2rem',
-                  color: 'var(--gold)',
+                  color: 'var(--accent-1)',
                   textAlign: 'center',
                 }}
               >
@@ -194,7 +194,7 @@ export default function ContactPage() {
                   style={{
                     textAlign: 'center',
                     padding: '2rem',
-                    color: 'var(--gold)',
+                    color: 'var(--accent-1)',
                     fontSize: '1.125rem',
                     fontWeight: 600,
                   }}
