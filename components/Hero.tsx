@@ -22,10 +22,20 @@ export default function Hero() {
         minHeight: '90vh',
         display: 'flex',
         alignItems: 'center',
-        overflow: 'visible',
-        background: 'transparent',
+        background: '#000000',
       }}
     >
+      {/* Storm background effects container with overflow hidden */}
+      <div className="hero-storm-bg-container" style={{ position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', overflow: 'hidden', zIndex: 0, pointerEvents: 'none' }}>
+        <div className="hero-storm-base"></div>
+        <div className="hero-storm-radial-1"></div>
+        <div className="hero-storm-radial-2"></div>
+        <div className="hero-storm-radial-3"></div>
+        <div className="hero-storm-swirl-1"></div>
+        <div className="hero-storm-swirl-2"></div>
+        <div className="hero-storm-swirl-3"></div>
+        <div className="hero-storm-noise"></div>
+      </div>
       
       <div className="container" style={{ position: 'relative', zIndex: 1 }}>
         <div
@@ -187,6 +197,160 @@ export default function Hero() {
       </div>
 
       <style jsx>{`
+        /* Storm background effects container */
+        .hero-storm-bg-container {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          overflow: hidden;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        /* Storm background effects for hero */
+        .hero-storm-base {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background: #000000;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        /* Soft radial glow gradients */
+        .hero-storm-radial-1 {
+          position: absolute;
+          top: -10%;
+          left: -5%;
+          width: 55%;
+          height: 55%;
+          background: radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%);
+          border-radius: 50%;
+          filter: blur(90px);
+          opacity: 0.8;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .hero-storm-radial-2 {
+          position: absolute;
+          bottom: -8%;
+          right: -5%;
+          width: 50%;
+          height: 50%;
+          background: radial-gradient(circle, rgba(201, 169, 97, 0.07) 0%, transparent 70%);
+          border-radius: 50%;
+          filter: blur(110px);
+          opacity: 0.7;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .hero-storm-radial-3 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 40%;
+          height: 40%;
+          background: radial-gradient(circle, rgba(230, 200, 120, 0.05) 0%, transparent 65%);
+          border-radius: 50%;
+          filter: blur(130px);
+          opacity: 0.6;
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        /* Abstract swirl/curve light shapes */
+        .hero-storm-swirl-1 {
+          position: absolute;
+          top: 10%;
+          right: 10%;
+          width: 600px;
+          height: 600px;
+          background-image: url("data:image/svg+xml,%3Csvg width='600' height='600' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='hswirl1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(212,175,55,0.06)' stop-opacity='1'/%3E%3Cstop offset='50%25' stop-color='rgba(212,175,55,0.03)' stop-opacity='1'/%3E%3Cstop offset='100%25' stop-color='transparent' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 300 300 Q 420 180 540 300 T 540 540 Q 420 420 300 540 T 60 540 Q 180 420 300 300' fill='none' stroke='url(%23hswirl1)' stroke-width='1.5' opacity='0.7'/%3E%3C/svg%3E");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: blur(40px);
+          opacity: 0.7;
+          transform: rotate(25deg);
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .hero-storm-swirl-2 {
+          position: absolute;
+          bottom: 15%;
+          left: 5%;
+          width: 550px;
+          height: 550px;
+          background-image: url("data:image/svg+xml,%3Csvg width='550' height='550' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='hswirl2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(201,169,97,0.055)' stop-opacity='1'/%3E%3Cstop offset='50%25' stop-color='rgba(201,169,97,0.028)' stop-opacity='1'/%3E%3Cstop offset='100%25' stop-color='transparent' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 275 275 Q 165 165 55 275 T 55 495 Q 165 385 275 495 T 495 495 Q 385 385 275 275' fill='none' stroke='url(%23hswirl2)' stroke-width='1.5' opacity='0.6'/%3E%3C/svg%3E");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: blur(45px);
+          opacity: 0.6;
+          transform: rotate(-35deg);
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        .hero-storm-swirl-3 {
+          position: absolute;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          width: 500px;
+          height: 500px;
+          background-image: url("data:image/svg+xml,%3Csvg width='500' height='500' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='hswirl3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='rgba(230,200,120,0.045)' stop-opacity='1'/%3E%3Cstop offset='50%25' stop-color='rgba(212,175,55,0.022)' stop-opacity='1'/%3E%3Cstop offset='100%25' stop-color='transparent' stop-opacity='0'/%3E%3C/linearGradient%3E%3C/defs%3E%3Cpath d='M 250 250 Q 350 150 450 250 T 450 450 Q 350 350 250 450 T 50 450 Q 150 350 250 250' fill='none' stroke='url(%23hswirl3)' stroke-width='1.5' opacity='0.5'/%3E%3C/svg%3E");
+          background-size: contain;
+          background-repeat: no-repeat;
+          background-position: center;
+          filter: blur(42px);
+          opacity: 0.55;
+          transform: translate(-50%, -50%) rotate(55deg);
+          z-index: 0;
+          pointer-events: none;
+        }
+
+        /* Cinematic grain/noise overlay */
+        .hero-storm-noise {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          height: 100%;
+          background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='heroNoiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23heroNoiseFilter)'/%3E%3C/svg%3E");
+          opacity: 0.15;
+          mix-blend-mode: overlay;
+          pointer-events: none;
+          z-index: 0;
+        }
+
+        @media (max-width: 768px) {
+          .hero-storm-radial-1,
+          .hero-storm-radial-2,
+          .hero-storm-radial-3 {
+            filter: blur(60px);
+          }
+
+          .hero-storm-swirl-1,
+          .hero-storm-swirl-2,
+          .hero-storm-swirl-3 {
+            width: 350px;
+            height: 350px;
+            filter: blur(30px);
+          }
+
+          .hero-storm-noise {
+            opacity: 0.12;
+          }
+        }
 
         /* Force transparency on ALL elements inside logo-container and wrapper */
         .logo-wrapper :global(*),
