@@ -19,6 +19,15 @@ export const metadata: Metadata = {
       'ro': '/ro',
     },
   },
+  icons: {
+    icon: [
+      { url: '/brand/logo.png', type: 'image/png' },
+      { url: '/favicon.ico', sizes: 'any' },
+    ],
+    apple: [
+      { url: '/brand/logo.png', type: 'image/png' },
+    ],
+  },
 };
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {

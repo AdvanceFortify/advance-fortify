@@ -36,7 +36,7 @@ export default function CTAForm() {
     <section
       style={{
         padding: '6rem 0',
-        background: 'var(--bg-1)',
+        background: 'transparent',
         position: 'relative',
       }}
     >

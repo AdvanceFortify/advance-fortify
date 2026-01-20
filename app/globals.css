@@ -1,12 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
 :root {
-  /* Background colors - Soft dark premium theme */
-  --bg-0: #1A1F26;
-  --bg-1: #232932;
-  --surface: rgba(35, 41, 50, 0.8);
-  --surface-2: rgba(40, 46, 55, 0.9);
-  --border: rgba(255, 191, 0, 0.15);
+  /* Background colors - Storm dark premium theme */
+  --bg-0: #0a0b0e;
+  --bg-1: #0d0e12;
+  --surface: rgba(15, 16, 20, 0.8);
+  --surface-2: rgba(18, 19, 24, 0.9);
+  --border: rgba(212, 175, 55, 0.15);
   
   /* Text colors - Off-white and light gray */
   --text: #F5F5F5;
@@ -64,6 +64,19 @@ body {
   overflow-x: hidden;
   position: relative;
   min-height: 100vh;
+}
+
+/* Storm background base */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #0a0b0e;
+  z-index: -2;
+  pointer-events: none;
 }
 
 /* Ensure main content has proper z-index layering */

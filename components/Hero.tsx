@@ -15,6 +15,7 @@ export default function Hero() {
 
   return (
     <section
+      className="hero-storm"
       style={{
         position: 'relative',
         padding: '6rem 0',
@@ -22,7 +23,7 @@ export default function Hero() {
         display: 'flex',
         alignItems: 'center',
         overflow: 'visible',
-        background: 'var(--bg-0)',
+        background: 'transparent',
       }}
     >
       

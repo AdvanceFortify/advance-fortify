@@ -12,7 +12,7 @@ export default function ResultsShowcase() {
     <section
       style={{
         padding: '6rem 0',
-        background: 'var(--bg-0)',
+        background: 'transparent',
       }}
     >
       <div className="container">
