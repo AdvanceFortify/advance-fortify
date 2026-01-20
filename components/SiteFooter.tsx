@@ -30,6 +30,8 @@ export default function SiteFooter() {
         borderTop: '1px solid var(--border-glow)',
         padding: '4rem 0 2rem',
         marginTop: '4rem',
+        position: 'relative',
+        zIndex: 1,
       }}
     >
       <div className="container">
