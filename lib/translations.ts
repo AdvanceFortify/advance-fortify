@@ -24,33 +24,71 @@ export const translations = {
     },
     home: {
       hero: {
-        headline: 'Digital Solutions That Drive Growth',
-        subheadline: 'We design and build websites, branding, and marketing systems that help businesses grow and scale sustainably.',
-        ctaConsultation: 'Schedule Consultation',
+        headline: 'Maximize Conversions With Advanced Web Design, SEO & Online Marketing',
+        subheadline: 'Transform your digital presence with premium solutions that drive real results. Fast, conversion-focused, and built for growth.',
+        ctaConsultation: 'Request a Consultation',
         ctaPortfolio: 'View Portfolio',
         trust: '',
+        trustStrip: {
+          benefit1: '48h Delivery Options',
+          benefit2: 'Mobile-First, SEO-Ready',
+          benefit3: 'Clean, Premium Design',
+        },
+      },
+      howItWorks: {
+        title: 'How It Works',
+        step1: {
+          title: 'Request',
+          description: 'Tell us about your project and goals',
+        },
+        step2: {
+          title: 'Build',
+          description: 'We design and develop your landing page',
+        },
+        step3: {
+          title: 'Launch',
+          description: 'Go live and start converting visitors',
+        },
       },
       services: {
-        title: 'Our Services',
-        branding: {
-          title: 'Branding & Visual Identity',
-          description: 'Brand strategy and visual identity design that establishes professional positioning and consistent recognition across all touchpoints.',
-        },
-        webDesign: {
-          title: 'Web Design',
-          description: 'High-performance websites with clean architecture, built for conversion and designed to scale with your business.',
-        },
+        title: 'What We Do Best',
+        subtitle: 'Conversion-focused digital solutions built to elevate your business',
         landingPages: {
-          title: 'Landing Pages',
-          description: 'Conversion-focused pages optimized for lead generation and campaign performance.',
+          title: 'Landing Page Development',
+          description: 'High-converting pages designed to generate leads and sales.',
         },
         seo: {
-          title: 'Advanced SEO',
-          description: 'Technical SEO and content-driven strategies that build long-term visibility and sustainable organic traffic.',
+          title: 'Web Performance & SEO',
+          description: 'Fast load times, clean structure, and technical SEO foundations.',
         },
         marketing: {
-          title: 'Digital Marketing',
-          description: 'Data-driven campaigns with measurable outcomes, focused on performance and strategic execution.',
+          title: 'Marketing Integrations',
+          description: 'Klaviyo, analytics, pixels, forms — wired for growth.',
+        },
+        rebuild: {
+          title: 'Website Refresh / Rebuild',
+          description: 'Modernize outdated sites into premium experiences.',
+        },
+        viewAll: 'View All Services',
+      },
+      whyWorkWithUs: {
+        title: 'Why Work With Us',
+        subtitle: 'Building digital experiences that actually work for your business',
+        fastDev: {
+          title: 'Fast Development',
+          description: 'Quick turnaround without compromising quality. We deliver premium results on time.',
+        },
+        clientFirst: {
+          title: 'Client-First Approach',
+          description: 'Your success is our priority. We listen, adapt, and build exactly what you need.',
+        },
+        attention: {
+          title: 'Attention to Detail',
+          description: 'Every pixel, every interaction, every line of code crafted with precision and care.',
+        },
+        results: {
+          title: 'Real Results',
+          description: 'Data-driven strategies that convert visitors into customers and grow your business.',
         },
       },
       results: {
@@ -60,13 +98,18 @@ export const translations = {
         cta: 'View Portfolio',
       },
       cta: {
-        title: 'Discuss Your Project',
-        subtitle: 'Request a detailed proposal tailored to your business needs',
-        name: 'Name',
-        email: 'Email',
-        projectType: 'Project Type',
-        submit: 'Request Proposal',
+        title: 'Request a Free Consultation',
+        subtitle: 'Tell us about your project — we\'ll reply within 24 hours.',
+        name: 'Full Name',
+        email: 'Email Address',
+        phone: 'Phone Number (optional, WhatsApp)',
+        serviceInterest: 'Service Interest',
+        message: 'Message',
+        submit: 'Send Request',
         success: 'Thank you! We\'ll be in touch soon.',
+        whatsapp: 'WhatsApp',
+        telegram: 'Telegram',
+        emailContact: 'Email',
       },
     },
     contact: {
@@ -84,22 +127,46 @@ export const translations = {
     },
     pricing: {
       title: 'Pricing Plans',
-      subtitle: 'Choose the plan that fits your needs',
-      launch: {
-        name: 'Launch',
-        description: 'Perfect for startups and small businesses',
+      subtitle: 'Simple, transparent pricing for landing pages that convert',
+      simple: {
+        name: 'Simple Landing Page',
+        price: '$100',
+        description: 'Perfect for single campaigns and product launches',
         cta: 'Request Quote',
+        features: [
+          'Single-page design',
+          'Mobile-responsive',
+          'Contact form integration',
+          'Basic SEO setup',
+          'Fast loading speed',
+        ],
       },
-      growth: {
-        name: 'Growth',
-        description: 'Ideal for growing businesses',
+      klaviyo: {
+        name: 'Landing + Klaviyo',
+        price: '$150',
+        description: 'Landing page with email marketing integration',
         cta: 'Request Quote',
         popular: 'Most Popular',
+        features: [
+          'Everything in Simple',
+          'Klaviyo integration',
+          'Email capture forms',
+          'Automated workflows',
+          'Performance tracking',
+        ],
       },
-      enterprise: {
-        name: 'Enterprise',
-        description: 'Custom solutions for large organizations',
+      full: {
+        name: 'Full Package',
+        price: '$250',
+        description: 'Complete solution with strategy and optimization',
         cta: 'Request Quote',
+        features: [
+          'Everything in Klaviyo',
+          'Conversion strategy',
+          'A/B testing setup',
+          'Performance feedback',
+          'Ongoing optimization',
+        ],
       },
     },
     legal: {
@@ -157,33 +224,71 @@ export const translations = {
     },
     home: {
       hero: {
-        headline: 'Soluții Digital Care Generează Creștere',
-        subheadline: 'Proiectăm și construim site-uri, branding și sisteme de marketing care ajută afacerile să crească și să se extindă în mod sustenabil.',
-        ctaConsultation: 'Programează Consultație',
+        headline: 'Maximizează Conversiile Cu Design Web Avansat, SEO & Marketing Online',
+        subheadline: 'Transformă prezența ta digitală cu soluții premium care generează rezultate reale. Rapid, orientat pe conversie și construit pentru creștere.',
+        ctaConsultation: 'Solicită o Consultație',
         ctaPortfolio: 'Vezi Portofoliu',
         trust: '',
+        trustStrip: {
+          benefit1: 'Opțiuni Livrare 48h',
+          benefit2: 'Mobile-First, Gata pentru SEO',
+          benefit3: 'Design Premium, Curat',
+        },
+      },
+      howItWorks: {
+        title: 'Cum Funcționează',
+        step1: {
+          title: 'Solicitare',
+          description: 'Spune-ne despre proiectul și obiectivele tale',
+        },
+        step2: {
+          title: 'Construire',
+          description: 'Proiectăm și dezvoltăm pagina ta de destinație',
+        },
+        step3: {
+          title: 'Lansare',
+          description: 'Intră în funcțiune și începe să convertești vizitatori',
+        },
       },
       services: {
-        title: 'Serviciile Noastre',
-        branding: {
-          title: 'Branding & Identitate Vizuală',
-          description: 'Strategie de brand și design de identitate vizuală care stabilește poziționare profesională și recunoaștere consistentă în toate punctele de contact.',
-        },
-        webDesign: {
-          title: 'Design Web',
-          description: 'Site-uri performante cu arhitectură curată, construite pentru conversie și proiectate să se extindă odată cu afacerea ta.',
-        },
+        title: 'Ce Facem Cel Mai Bine',
+        subtitle: 'Soluții digitale orientate pe conversie construite pentru a ridica afacerea ta',
         landingPages: {
-          title: 'Pagini de Destinație',
-          description: 'Pagini orientate pe conversie, optimizate pentru generarea de lead-uri și performanța campaniilor.',
+          title: 'Dezvoltare Pagini de Destinație',
+          description: 'Pagini de înaltă conversie proiectate să genereze lead-uri și vânzări.',
         },
         seo: {
-          title: 'SEO Avansat',
-          description: 'SEO tehnic și strategii bazate pe conținut care construiesc vizibilitate pe termen lung și trafic organic sustenabil.',
+          title: 'Performanță Web & SEO',
+          description: 'Timpuri de încărcare rapide, structură curată și fundații SEO tehnice.',
         },
         marketing: {
-          title: 'Marketing Digital',
-          description: 'Campanii bazate pe date cu rezultate măsurabile, concentrate pe performanță și execuție strategică.',
+          title: 'Integrări Marketing',
+          description: 'Klaviyo, analitică, pixeli, formulare — conectate pentru creștere.',
+        },
+        rebuild: {
+          title: 'Reînnoire / Reconstruire Site',
+          description: 'Modernizarea site-urilor învechite în experiențe premium.',
+        },
+        viewAll: 'Vezi Toate Serviciile',
+      },
+      whyWorkWithUs: {
+        title: 'De Ce Să Lucrezi Cu Noi',
+        subtitle: 'Construim experiențe digitale care funcționează cu adevărat pentru afacerea ta',
+        fastDev: {
+          title: 'Dezvoltare Rapidă',
+          description: 'Livrare rapidă fără a compromite calitatea. Livrăm rezultate premium la timp.',
+        },
+        clientFirst: {
+          title: 'Abordare Orientată pe Client',
+          description: 'Succesul tău este prioritatea noastră. Ascultăm, ne adaptăm și construim exact ce ai nevoie.',
+        },
+        attention: {
+          title: 'Atenție la Detalii',
+          description: 'Fiecare pixel, fiecare interacțiune, fiecare linie de cod creată cu precizie și grijă.',
+        },
+        results: {
+          title: 'Rezultate Reale',
+          description: 'Strategii bazate pe date care convertesc vizitatori în clienți și cresc afacerea ta.',
         },
       },
       results: {
@@ -193,13 +298,18 @@ export const translations = {
         cta: 'Vezi Portofoliu',
       },
       cta: {
-        title: 'Discută Proiectul Tău',
-        subtitle: 'Solicită o propunere detaliată adaptată nevoilor afacerii tale',
-        name: 'Nume',
-        email: 'Email',
-        projectType: 'Tip Proiect',
-        submit: 'Solicită Propunere',
+        title: 'Solicită o Consultație Gratuită',
+        subtitle: 'Spune-ne despre proiectul tău — vom răspunde în 24 de ore.',
+        name: 'Nume Complet',
+        email: 'Adresă Email',
+        phone: 'Număr Telefon (opțional, WhatsApp)',
+        serviceInterest: 'Interes Serviciu',
+        message: 'Mesaj',
+        submit: 'Trimite Cerere',
         success: 'Mulțumim! Vom lua legătura în curând.',
+        whatsapp: 'WhatsApp',
+        telegram: 'Telegram',
+        emailContact: 'Email',
       },
     },
     contact: {
@@ -217,22 +327,46 @@ export const translations = {
     },
     pricing: {
       title: 'Planuri de Prețuri',
-      subtitle: 'Alege planul care se potrivește nevoilor tale',
-      launch: {
-        name: 'Lansare',
-        description: 'Perfect pentru startup-uri și afaceri mici',
+      subtitle: 'Prețuri simple și transparente pentru pagini de destinație care convertesc',
+      simple: {
+        name: 'Pagină Simplă',
+        price: '$100',
+        description: 'Perfect pentru campanii unice și lansări de produse',
         cta: 'Cere Ofertă',
+        features: [
+          'Design pagină unică',
+          'Responsive pe mobil',
+          'Integrare formular contact',
+          'Configurare SEO de bază',
+          'Viteză de încărcare rapidă',
+        ],
       },
-      growth: {
-        name: 'Creștere',
-        description: 'Ideal pentru afaceri în creștere',
+      klaviyo: {
+        name: 'Landing + Klaviyo',
+        price: '$150',
+        description: 'Pagină de destinație cu integrare email marketing',
         cta: 'Cere Ofertă',
         popular: 'Cel Mai Popular',
+        features: [
+          'Tot ce e în Simple',
+          'Integrare Klaviyo',
+          'Formulare captare email',
+          'Fluxuri de lucru automate',
+          'Urmărire performanță',
+        ],
       },
-      enterprise: {
-        name: 'Enterprise',
-        description: 'Soluții personalizate pentru organizații mari',
+      full: {
+        name: 'Pachet Complet',
+        price: '$250',
+        description: 'Soluție completă cu strategie și optimizare',
         cta: 'Cere Ofertă',
+        features: [
+          'Tot ce e în Klaviyo',
+          'Strategie conversie',
+          'Configurare testare A/B',
+          'Feedback performanță',
+          'Optimizare continuă',
+        ],
       },
     },
     legal: {

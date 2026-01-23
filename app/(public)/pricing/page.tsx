@@ -1,57 +1,35 @@
-import { Metadata } from 'next';
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '@/components/LanguageProvider';
 import { getTranslation } from '@/lib/translations';
 
-export const metadata: Metadata = {
-  title: 'Pricing | Advance Fortify',
-  description: 'Flexible pricing plans for web design, SEO, and marketing services.',
-};
-
 export default function PricingPage() {
-  const t = getTranslation('en');
+  const { language } = useLanguage();
+  const t = getTranslation(language);
 
   const tiers = [
     {
-      name: t.pricing.launch.name,
-      description: t.pricing.launch.description,
-      cta: t.pricing.launch.cta,
-      features: [
-        'Basic website (up to 5 pages)',
-        'Responsive design',
-        'Basic SEO setup',
-        '1 month support',
-        'Contact form',
-      ],
+      name: t.pricing.simple.name,
+      price: t.pricing.simple.price,
+      description: t.pricing.simple.description,
+      cta: t.pricing.simple.cta,
+      features: t.pricing.simple.features,
     },
     {
-      name: t.pricing.growth.name,
-      description: t.pricing.growth.description,
-      cta: t.pricing.growth.cta,
+      name: t.pricing.klaviyo.name,
+      price: t.pricing.klaviyo.price,
+      description: t.pricing.klaviyo.description,
+      cta: t.pricing.klaviyo.cta,
       popular: true,
-      features: [
-        'Custom website (up to 15 pages)',
-        'Advanced SEO optimization',
-        'Landing page design',
-        '3 months support',
-        'Analytics integration',
-        'Social media setup',
-        'Content strategy',
-      ],
+      features: t.pricing.klaviyo.features,
     },
     {
-      name: t.pricing.enterprise.name,
-      description: t.pricing.enterprise.description,
-      cta: t.pricing.enterprise.cta,
-      features: [
-        'Unlimited pages',
-        'Custom development',
-        'Full SEO campaign',
-        '6 months support',
-        'Marketing strategy',
-        'Dedicated account manager',
-        'Priority support',
-        'Custom integrations',
-      ],
+      name: t.pricing.full.name,
+      price: t.pricing.full.price,
+      description: t.pricing.full.description,
+      cta: t.pricing.full.cta,
+      features: t.pricing.full.features,
     },
   ];
 
@@ -123,20 +101,20 @@ export default function PricingPage() {
                       top: '-12px',
                       left: '50%',
                       transform: 'translateX(-50%)',
-                      background: 'var(--gold)',
-                      color: 'var(--bg-dark)',
+                      background: 'var(--accent-1)',
+                      color: 'var(--bg-0)',
                       padding: '0.375rem 1rem',
                       borderRadius: '1rem',
                       fontSize: '0.875rem',
                       fontWeight: 600,
                     }}
                   >
-                    {t.pricing.growth.popular}
+                    {t.pricing.klaviyo.popular}
                   </div>
                 )}
                 <h2
                   style={{
-                    fontSize: '2rem',
+                    fontSize: '1.75rem',
                     fontWeight: 700,
                     marginBottom: '0.5rem',
                     color: 'var(--accent-1)',
@@ -144,24 +122,26 @@ export default function PricingPage() {
                 >
                   {tier.name}
                 </h2>
+                <div
+                  style={{
+                    fontSize: '3rem',
+                    fontWeight: 800,
+                    marginBottom: '0.5rem',
+                    color: 'var(--text)',
+                    lineHeight: 1,
+                  }}
+                >
+                  {tier.price}
+                </div>
                 <p
                   style={{
                     color: 'var(--text-secondary)',
                     marginBottom: '2rem',
+                    fontSize: '0.9375rem',
                   }}
                 >
                   {tier.description}
                 </p>
-                <div
-                  style={{
-                    fontSize: '2.5rem',
-                    fontWeight: 800,
-                    marginBottom: '2rem',
-                    color: 'var(--text-primary)',
-                  }}
-                >
-                  Request Quote
-                </div>
                 <ul
                   style={{
                     listStyle: 'none',
@@ -179,9 +159,11 @@ export default function PricingPage() {
                         alignItems: 'flex-start',
                         gap: '0.75rem',
                         color: 'var(--text-secondary)',
+                        fontSize: '0.9375rem',
+                        lineHeight: 1.6,
                       }}
                     >
-                      <span style={{ color: 'var(--gold)', marginTop: '0.25rem' }}>✓</span>
+                      <span style={{ color: 'var(--accent-1)', marginTop: '0.25rem', fontWeight: 600 }}>✓</span>
                       <span>{feature}</span>
                     </li>
                   ))}

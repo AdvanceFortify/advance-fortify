@@ -1,183 +1,175 @@
-import { Metadata } from 'next';
-import Link from 'next/link';
-import { getTranslation } from '@/lib/translations';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Portfolio | Advance Fortify',
-  description: 'View our portfolio of successful web design, SEO, and marketing projects.',
-};
+import Link from 'next/link';
+import PortfolioCard from '@/components/PortfolioCard';
+
+interface PortfolioItem {
+  title: string;
+  badge: string;
+  image: string;
+  slug: string;
+}
+
+const portfolioItems: PortfolioItem[] = [
+  {
+    title: 'SaaS Conversion Page',
+    badge: 'Landing Page',
+    image: '/portfolio/saas-preview.jpg',
+    slug: 'saas',
+  },
+  {
+    title: 'Local Service Business',
+    badge: 'Website',
+    image: '/portfolio/local-service-preview.jpg',
+    slug: 'local-service',
+  },
+  {
+    title: 'Coach Personal Brand',
+    badge: 'Landing Page',
+    image: '/portfolio/coach-preview.jpg',
+    slug: 'coach',
+  },
+  {
+    title: 'E-commerce Teaser',
+    badge: 'Landing Page',
+    image: '/portfolio/ecommerce-preview.jpg',
+    slug: 'ecommerce',
+  },
+  {
+    title: 'Luxury Brand Showcase',
+    badge: 'Website',
+    image: '/portfolio/luxury-preview.jpg',
+    slug: 'luxury',
+  },
+  {
+    title: 'Minimal Portfolio',
+    badge: 'Website',
+    image: '/portfolio/minimal-preview.jpg',
+    slug: 'minimal',
+  },
+];
 
 export default function PortfolioPage() {
-  const t = getTranslation('en');
-
-  const filters = ['All', 'Landing Pages', 'SEO', 'Marketing', 'Web Design'];
-  const projects = [
-    {
-      title: 'E-commerce Platform',
-      category: 'Web Design',
-      description: 'Modern e-commerce solution with advanced features',
-      image: '🛒',
-    },
-    {
-      title: 'SaaS Landing Page',
-      category: 'Landing Pages',
-      description: 'High-converting landing page for SaaS product',
-      image: '💼',
-    },
-    {
-      title: 'SEO Campaign',
-      category: 'SEO',
-      description: 'Increased organic traffic by 200%',
-      image: '📈',
-    },
-    {
-      title: 'Social Media Campaign',
-      category: 'Marketing',
-      description: 'Viral campaign with 1M+ impressions',
-      image: '📱',
-    },
-    {
-      title: 'Corporate Website',
-      category: 'Web Design',
-      description: 'Professional corporate website redesign',
-      image: '🏢',
-    },
-    {
-      title: 'Product Launch Page',
-      category: 'Landing Pages',
-      description: 'Successful product launch campaign',
-      image: '🚀',
-    },
-  ];
-
   return (
     <div>
+      {/* Hero Section */}
       <section
+        className="portfolio-hero"
         style={{
-          padding: '8rem 0 4rem',
+          padding: '8rem 0 6rem',
           textAlign: 'center',
+          position: 'relative',
+          overflow: 'hidden',
+          background: 'linear-gradient(to bottom, #0b0b0e 0%, #111114 100%)',
         }}
       >
-        <div className="container">
+        {/* Subtle animated glow */}
+        <div
+          className="hero-glow"
+          style={{
+            position: 'absolute',
+            top: '50%',
+            left: '50%',
+            transform: 'translate(-50%, -50%)',
+            width: '600px',
+            height: '600px',
+            background: 'radial-gradient(circle, rgba(212, 175, 55, 0.08) 0%, transparent 70%)',
+            filter: 'blur(80px)',
+            animation: 'glowPulse 8s ease-in-out infinite',
+            pointerEvents: 'none',
+          }}
+        />
+
+        <div className="container" style={{ position: 'relative', zIndex: 1 }}>
           <h1
             style={{
-              fontSize: 'clamp(2.5rem, 5vw, 4rem)',
-              fontWeight: 800,
+              fontSize: 'clamp(3rem, 6vw, 5rem)',
+              fontWeight: 900,
               marginBottom: '1.5rem',
-              background: 'linear-gradient(135deg, var(--accent-1) 0%, var(--accent-3) 50%, var(--accent-2) 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
+              color: 'var(--text)',
+              letterSpacing: '-0.03em',
+              lineHeight: 1.1,
             }}
           >
-            {t.nav.portfolio}
+            Portfolio
           </h1>
           <p
             style={{
-              fontSize: '1.25rem',
-              color: 'var(--text-secondary)',
-              maxWidth: '700px',
-              margin: '0 auto',
+              fontSize: 'clamp(1.125rem, 2vw, 1.25rem)',
+              color: 'var(--muted)',
+              maxWidth: '600px',
+              margin: '0 auto 2.5rem',
+              lineHeight: 1.6,
             }}
           >
-            Explore our successful projects and case studies
+            Curated website & landing page designs — built to convert.
           </p>
+          <Link
+            href="/contact"
+            className="btn btn-primary"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              textDecoration: 'none',
+              fontSize: '1rem',
+              padding: '0.875rem 2rem',
+            }}
+          >
+            Request a Quote
+          </Link>
         </div>
+
+        <style jsx>{`
+          @keyframes glowPulse {
+            0%, 100% {
+              opacity: 0.6;
+              transform: translate(-50%, -50%) scale(1);
+            }
+            50% {
+              opacity: 1;
+              transform: translate(-50%, -50%) scale(1.1);
+            }
+          }
+
+          @media (max-width: 768px) {
+            .portfolio-grid {
+              grid-template-columns: 1fr !important;
+            }
+          }
+
+          @media (prefers-reduced-motion: reduce) {
+            .hero-glow {
+              animation: none;
+            }
+          }
+        `}</style>
       </section>
 
+      {/* Portfolio Grid */}
       <section
         style={{
-          padding: '2rem 0 4rem',
+          padding: '4rem 0 6rem',
+          background: 'transparent',
         }}
       >
         <div className="container">
           <div
-            style={{
-              display: 'flex',
-              flexWrap: 'wrap',
-              gap: '1rem',
-              justifyContent: 'center',
-              marginBottom: '3rem',
-            }}
-          >
-            {filters.map((filter) => (
-              <button
-                key={filter}
-                className="btn btn-secondary"
-                style={{
-                  fontSize: '0.875rem',
-                  padding: '0.625rem 1.25rem',
-                }}
-              >
-                {filter}
-              </button>
-            ))}
-          </div>
-
-          <div
+            className="portfolio-grid"
             style={{
               display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+              gridTemplateColumns: 'repeat(auto-fit, minmax(350px, 1fr))',
               gap: '2rem',
             }}
           >
-            {projects.map((project, index) => (
-              <Link
+            {portfolioItems.map((item, index) => (
+              <PortfolioCard
                 key={index}
-                href="#"
-                className="card"
-                style={{
-                  textDecoration: 'none',
-                  padding: '2rem',
-                  display: 'flex',
-                  flexDirection: 'column',
-                  minHeight: '300px',
-                }}
-              >
-                <div
-                  style={{
-                    fontSize: '4rem',
-                    marginBottom: '1.5rem',
-                    textAlign: 'center',
-                  }}
-                >
-                  {project.image}
-                </div>
-                <div
-                  style={{
-                    padding: '0.5rem 1rem',
-                    background: 'var(--surface)',
-                    border: '1px solid var(--border)',
-                    borderRadius: '0.375rem',
-                    fontSize: '0.875rem',
-                    color: 'var(--accent-1)',
-                    display: 'inline-block',
-                    marginBottom: '1rem',
-                    width: 'fit-content',
-                  }}
-                >
-                  {project.category}
-                </div>
-                <h3
-                  style={{
-                    fontSize: '1.5rem',
-                    fontWeight: 600,
-                    marginBottom: '0.75rem',
-                    color: 'var(--text-primary)',
-                  }}
-                >
-                  {project.title}
-                </h3>
-                <p
-                  style={{
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.6,
-                    flex: 1,
-                  }}
-                >
-                  {project.description}
-                </p>
-              </Link>
+                title={item.title}
+                badge={item.badge}
+                image={item.image}
+                slug={item.slug}
+              />
             ))}
           </div>
         </div>

@@ -97,19 +97,29 @@ export default function ContactPage() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: '1rem',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = 'var(--accent-1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'var(--border)';
               }}
             >
-              <div style={{ fontSize: '3rem' }}>💬</div>
+              <div style={{ fontSize: '3rem', lineHeight: 1 }}>💬</div>
               <h3
                 style={{
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-1)',
+                  margin: 0,
                 }}
               >
                 {t.contact.whatsapp}
               </h3>
-              <p style={{ color: 'var(--text-secondary)' }}>+40 748 979 607</p>
+              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>+40 748 979 607</p>
             </a>
 
             <a
@@ -123,45 +133,68 @@ export default function ContactPage() {
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: '1rem',
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = 'var(--accent-1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'var(--border)';
               }}
             >
-              <div style={{ fontSize: '3rem' }}>✉️</div>
+              <div style={{ fontSize: '3rem', lineHeight: 1 }}>✉️</div>
               <h3
                 style={{
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-1)',
+                  margin: 0,
                 }}
               >
                 {t.contact.email}
               </h3>
-              <p style={{ color: 'var(--text-secondary)' }}>admin@advancefortify.com</p>
+              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>admin@advancefortify.com</p>
             </a>
 
-            <div
+            <a
+              href="https://t.me/+40748979607"
+              target="_blank"
+              rel="noopener noreferrer"
               className="card"
               style={{
                 textAlign: 'center',
                 padding: '2.5rem',
+                textDecoration: 'none',
                 display: 'flex',
                 flexDirection: 'column',
                 alignItems: 'center',
                 gap: '1rem',
-                opacity: 0.6,
+                transition: 'all 0.3s ease',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.transform = 'translateY(-4px)';
+                e.currentTarget.style.borderColor = 'var(--accent-1)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.transform = 'translateY(0)';
+                e.currentTarget.style.borderColor = 'var(--border)';
               }}
             >
-              <div style={{ fontSize: '3rem' }}>✈️</div>
+              <div style={{ fontSize: '3rem', lineHeight: 1 }}>✈️</div>
               <h3
                 style={{
                   fontSize: '1.5rem',
                   fontWeight: 600,
                   color: 'var(--accent-1)',
+                  margin: 0,
                 }}
               >
                 {t.contact.telegram}
               </h3>
-              <p style={{ color: 'var(--text-secondary)' }}>Coming soon</p>
-            </div>
+              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>+40 748 979 607</p>
+            </a>
           </div>
 
           <div

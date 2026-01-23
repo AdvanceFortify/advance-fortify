@@ -1,8 +1,8 @@
 import Hero from '@/components/Hero';
 import ServiceCards from '@/components/ServiceCards';
+import WhyWorkWithUs from '@/components/WhyWorkWithUs';
 import ResultsShowcase from '@/components/ResultsShowcase';
 import CTAForm from '@/components/CTAForm';
-import StormBackground from '@/components/StormBackground';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -30,9 +30,9 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <StormBackground />
       <Hero />
       <ServiceCards />
+      <WhyWorkWithUs />
       <ResultsShowcase />
       <CTAForm />
       <script

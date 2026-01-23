@@ -1,7 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { useLanguage } from './LanguageProvider';
+import { useLanguage } from '@/components/LanguageProvider';
 import { getTranslation } from '@/lib/translations';
 
 export default function ResultsShowcase() {

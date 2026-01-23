@@ -9,22 +9,12 @@ export const metadata: Metadata = {
 export default function ServicesPage() {
   const t = getTranslation('en'); // Default to EN for server component
 
+  // Safe fallback services with optional chaining
   const services = [
     {
-      icon: '🌐',
-      title: t.home.services.webDesign.title,
-      description: t.home.services.webDesign.description,
-      features: [
-        'Custom Next.js development',
-        'Responsive design',
-        'Performance optimization',
-        'SEO-friendly structure',
-      ],
-    },
-    {
       icon: '🚀',
-      title: t.home.services.landingPages.title,
-      description: t.home.services.landingPages.description,
+      title: t?.home?.services?.landingPages?.title ?? 'Landing Pages',
+      description: t?.home?.services?.landingPages?.description ?? 'High-converting pages designed to turn visitors into leads.',
       features: [
         'High-converting layouts',
         'A/B testing ready',
@@ -34,8 +24,8 @@ export default function ServicesPage() {
     },
     {
       icon: '📈',
-      title: t.home.services.seo.title,
-      description: t.home.services.seo.description,
+      title: t?.home?.services?.seo?.title ?? 'SEO & Performance',
+      description: t?.home?.services?.seo?.description ?? 'Technical optimization and performance tuning for fast loading and better rankings.',
       features: [
         'Technical SEO audit',
         'Keyword research',
@@ -45,8 +35,8 @@ export default function ServicesPage() {
     },
     {
       icon: '💡',
-      title: t.home.services.marketing.title,
-      description: t.home.services.marketing.description,
+      title: t?.home?.services?.marketing?.title ?? 'Marketing Integrations',
+      description: t?.home?.services?.marketing?.description ?? 'Seamless connections with Klaviyo, analytics tools, and marketing platforms.',
       features: [
         'Campaign strategy',
         'Social media management',
@@ -76,7 +66,7 @@ export default function ServicesPage() {
               backgroundClip: 'text',
             }}
           >
-            {t.home.services.title}
+            {t?.home?.services?.title ?? 'Our Services'}
           </h1>
           <p
             style={{
