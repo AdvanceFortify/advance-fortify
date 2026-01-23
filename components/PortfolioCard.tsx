@@ -13,7 +13,7 @@ interface PortfolioCardProps {
 export default function PortfolioCard({ title, badge, slug }: PortfolioCardProps) {
   return (
     <Link
-      href={`/portfolio/demo-${slug}`}
+      href={`/portfolio/${slug}`}
       className="portfolio-card-premium"
       style={{
         display: 'block',
