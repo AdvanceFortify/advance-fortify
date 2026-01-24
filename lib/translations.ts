@@ -5,7 +5,7 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
-      portfolio: 'Portfolio',
+      portfolio: 'Templates',
       pricing: 'Pricing',
       about: 'About',
       contact: 'Contact',
@@ -27,7 +27,7 @@ export const translations = {
         headline: 'Maximize Conversions With Advanced Web Design, SEO & Online Marketing',
         subheadline: 'Transform your digital presence with premium solutions that drive real results. Fast, conversion-focused, and built for growth.',
         ctaConsultation: 'Request a Consultation',
-        ctaPortfolio: 'View Portfolio',
+        ctaPortfolio: 'View Templates',
         trust: '',
         trustStrip: {
           benefit1: '48h Delivery Options',
@@ -95,7 +95,7 @@ export const translations = {
         title: 'Results That Matter',
         leads: '+83% Leads',
         cpa: '-45% CPA',
-        cta: 'View Portfolio',
+        cta: 'View Templates',
       },
       cta: {
         title: 'Request a Free Consultation',
@@ -205,7 +205,7 @@ export const translations = {
     nav: {
       home: 'Acasă',
       services: 'Servicii',
-      portfolio: 'Portofoliu',
+      portfolio: 'Șabloane',
       pricing: 'Prețuri',
       about: 'Despre',
       contact: 'Contact',
@@ -227,7 +227,7 @@ export const translations = {
         headline: 'Maximizează Conversiile Cu Design Web Avansat, SEO & Marketing Online',
         subheadline: 'Transformă prezența ta digitală cu soluții premium care generează rezultate reale. Rapid, orientat pe conversie și construit pentru creștere.',
         ctaConsultation: 'Solicită o Consultație',
-        ctaPortfolio: 'Vezi Portofoliu',
+        ctaPortfolio: 'Vezi Șabloane',
         trust: '',
         trustStrip: {
           benefit1: 'Opțiuni Livrare 48h',
@@ -295,7 +295,7 @@ export const translations = {
         title: 'Rezultate Care Contează',
         leads: '+83% Lead-uri',
         cpa: '-45% CPA',
-        cta: 'Vezi Portofoliu',
+        cta: 'Vezi Șabloane',
       },
       cta: {
         title: 'Solicită o Consultație Gratuită',

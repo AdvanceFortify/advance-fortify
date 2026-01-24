@@ -121,7 +121,7 @@ export default function ResultsShowcase() {
 
         <div style={{ textAlign: 'center' }}>
           <Link
-            href="/portfolio"
+            href="/templates"
             className="btn btn-primary"
             style={{
               display: 'inline-flex',

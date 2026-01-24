@@ -102,7 +102,7 @@ export default function Hero() {
                 Request a Consultation
               </Link>
               <Link
-                href="/portfolio"
+                href="/templates"
                 className="btn btn-secondary"
                 style={{
                   display: 'inline-flex',

@@ -94,7 +94,7 @@ export default function DemoLandingShell({
           backdropFilter: 'blur(10px)',
         }}
       >
-        Demo Only — UI Preview • No data is sent
+        Template Preview • This is a design concept. We customize content, layout, and branding for your business.
       </div>
 
       {/* Hero Section */}

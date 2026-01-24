@@ -133,7 +133,7 @@ export default function RealPortfolioPage() {
                   textDecoration: 'none',
                   position: 'relative',
                   overflow: 'hidden',
-                  borderRadius: '28px',
+                  borderRadius: '20px',
                   background: 'rgba(255, 255, 255, 0.03)',
                   border: '1px solid rgba(255, 255, 255, 0.08)',
                   transition: 'all 0.4s cubic-bezier(0.4, 0, 0.2, 1)',
@@ -143,38 +143,136 @@ export default function RealPortfolioPage() {
                 }}
                 className="real-project-card"
               >
-                {/* Logo Area */}
+                {/* Client Project Badge */}
                 <div
                   style={{
-                    padding: '2.5rem 2rem 2rem',
-                    position: 'relative',
+                    position: 'absolute',
+                    top: '1rem',
+                    right: '1rem',
+                    padding: '0.375rem 0.875rem',
+                    background: 'rgba(212, 175, 55, 0.15)',
+                    border: '1px solid rgba(212, 175, 55, 0.3)',
+                    borderRadius: '9999px',
+                    fontSize: '0.75rem',
+                    fontWeight: 700,
+                    color: 'var(--accent-1)',
+                    zIndex: 2,
+                    backdropFilter: 'blur(10px)',
                   }}
                 >
+                  CLIENT PROJECT
+                </div>
+
+                {/* Realistic Preview Thumbnail */}
+                <div
+                  style={{
+                    aspectRatio: '16/10',
+                    background: `linear-gradient(135deg, ${project.theme.gradientStart} 0%, ${project.theme.gradientEnd} 100%)`,
+                    position: 'relative',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+                  }}
+                >
+                  {/* Mock Browser Chrome */}
                   <div
                     style={{
-                      width: '80px',
-                      height: '80px',
-                      background: `linear-gradient(135deg, ${project.theme.gradientStart} 0%, ${project.theme.gradientEnd} 100%)`,
-                      borderRadius: '16px',
-                      border: `1px solid ${project.theme.borderColor}`,
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'center',
-                      fontSize: '2rem',
-                      fontWeight: 900,
-                      color: project.theme.accentColor,
-                      marginBottom: '1.5rem',
-                      boxShadow: `0 8px 32px ${project.theme.glowColor}`,
+                      position: 'absolute',
+                      top: '1.5rem',
+                      left: '1.5rem',
+                      right: '1.5rem',
+                      bottom: '1.5rem',
+                      background: 'rgba(255, 255, 255, 0.95)',
+                      borderRadius: '8px',
+                      boxShadow: '0 8px 32px rgba(0, 0, 0, 0.15)',
+                      overflow: 'hidden',
                     }}
                   >
-                    {project.name[0]}
+                    {/* Browser Header */}
+                    <div
+                      style={{
+                        height: '28px',
+                        background: 'rgba(0, 0, 0, 0.05)',
+                        borderBottom: '1px solid rgba(0, 0, 0, 0.1)',
+                        display: 'flex',
+                        alignItems: 'center',
+                        padding: '0 0.75rem',
+                        gap: '0.5rem',
+                      }}
+                    >
+                      <div
+                        style={{
+                          width: '8px',
+                          height: '8px',
+                          borderRadius: '50%',
+                          background: '#FF5F56',
+                        }}
+                      />
+                      <div
+                        style={{
+                          width: '8px',
+                          height: '8px',
+                          borderRadius: '50%',
+                          background: '#FFBD2E',
+                        }}
+                      />
+                      <div
+                        style={{
+                          width: '8px',
+                          height: '8px',
+                          borderRadius: '50%',
+                          background: '#27C93F',
+                        }}
+                      />
+                    </div>
+                    {/* Content Area */}
+                    <div
+                      style={{
+                        padding: '1.25rem',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        height: 'calc(100% - 28px)',
+                      }}
+                    >
+                      <div
+                        style={{
+                          fontSize: '2.5rem',
+                          marginBottom: '0.5rem',
+                        }}
+                      >
+                        {project.features[0]?.icon || '🏢'}
+                      </div>
+                      <div
+                        style={{
+                          fontSize: '0.75rem',
+                          fontWeight: 700,
+                          color: project.theme.accentColor,
+                          textAlign: 'center',
+                        }}
+                      >
+                        {project.name}
+                      </div>
+                    </div>
                   </div>
+                </div>
 
+                {/* Content Area */}
+                <div
+                  style={{
+                    padding: '2rem',
+                    flex: 1,
+                    display: 'flex',
+                    flexDirection: 'column',
+                  }}
+                >
                   <h3
                     style={{
                       fontSize: '1.5rem',
                       fontWeight: 800,
-                      marginBottom: '0.5rem',
+                      marginBottom: '0.75rem',
                       color: 'var(--text)',
                       lineHeight: 1.2,
                     }}
@@ -186,7 +284,7 @@ export default function RealPortfolioPage() {
                     style={{
                       fontSize: '0.9375rem',
                       color: 'var(--muted)',
-                      marginBottom: '0.25rem',
+                      marginBottom: '0.5rem',
                     }}
                   >
                     {project.industry}
@@ -199,64 +297,70 @@ export default function RealPortfolioPage() {
                       display: 'flex',
                       alignItems: 'center',
                       gap: '0.375rem',
+                      marginBottom: '1.25rem',
                     }}
                   >
                     <span style={{ fontSize: '0.75rem' }}>📍</span>
                     {project.location}
                   </div>
-                </div>
 
-                {/* Metric Badge */}
-                <div
-                  style={{
-                    padding: '0 2rem 1.5rem',
-                  }}
-                >
+                  {/* Key Metric */}
                   <div
                     style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '0.5rem',
-                      padding: '0.625rem 1.25rem',
+                      padding: '1rem',
                       background: project.theme.gradientStart,
                       border: `1px solid ${project.theme.borderColor}`,
-                      borderRadius: '9999px',
-                      fontSize: '0.9375rem',
-                      fontWeight: 700,
-                      color: project.theme.accentColor,
+                      borderRadius: '12px',
+                      marginBottom: '1rem',
                     }}
                   >
-                    <span style={{ fontSize: '1.125rem' }}>📈</span>
-                    {project.metric}
-                  </div>
-                </div>
-
-                {/* Tags */}
-                <div
-                  style={{
-                    padding: '1.5rem 2rem 2rem',
-                    borderTop: '1px solid rgba(255, 255, 255, 0.06)',
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    gap: '0.5rem',
-                  }}
-                >
-                  {project.tags.map((tag, i) => (
-                    <span
-                      key={i}
+                    <div
                       style={{
-                        padding: '0.375rem 0.875rem',
-                        background: 'rgba(255, 255, 255, 0.05)',
-                        border: '1px solid rgba(255, 255, 255, 0.08)',
-                        borderRadius: '9999px',
                         fontSize: '0.8125rem',
+                        color: 'var(--muted)',
+                        marginBottom: '0.25rem',
                         fontWeight: 600,
-                        color: 'var(--muted-2)',
                       }}
                     >
-                      {tag}
-                    </span>
-                  ))}
+                      Key Result
+                    </div>
+                    <div
+                      style={{
+                        fontSize: '1.25rem',
+                        fontWeight: 800,
+                        color: project.theme.accentColor,
+                      }}
+                    >
+                      {project.metric}
+                    </div>
+                  </div>
+
+                  {/* Tags */}
+                  <div
+                    style={{
+                      display: 'flex',
+                      flexWrap: 'wrap',
+                      gap: '0.5rem',
+                      marginTop: 'auto',
+                    }}
+                  >
+                    {project.tags.map((tag, i) => (
+                      <span
+                        key={i}
+                        style={{
+                          padding: '0.375rem 0.875rem',
+                          background: 'rgba(255, 255, 255, 0.05)',
+                          border: '1px solid rgba(255, 255, 255, 0.08)',
+                          borderRadius: '9999px',
+                          fontSize: '0.8125rem',
+                          fontWeight: 600,
+                          color: 'var(--muted-2)',
+                        }}
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
                 </div>
 
                 {/* Hover glow */}
@@ -272,7 +376,7 @@ export default function RealPortfolioPage() {
                     opacity: 0,
                     transition: 'opacity 0.4s ease',
                     pointerEvents: 'none',
-                    borderRadius: '28px',
+                    borderRadius: '20px',
                   }}
                 />
               </Link>
