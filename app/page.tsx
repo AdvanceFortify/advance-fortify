@@ -3,7 +3,7 @@ import ServiceCards from '@/components/ServiceCards';
 import WhyWorkWithUs from '@/components/WhyWorkWithUs';
 import ResultsShowcase from '@/components/ResultsShowcase';
 import CTAForm from '@/components/CTAForm';
-import { Metadata } from 'next';
+import { Metadata } from 'next';    
 
 export const metadata: Metadata = {
   title: 'Advance Fortify | Premium Web Design, SEO & Marketing',
