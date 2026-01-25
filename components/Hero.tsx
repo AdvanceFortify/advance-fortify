@@ -4,10 +4,51 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
+import { useEffect, useRef, useState } from 'react';
 
 export default function Hero() {
   const { language } = useLanguage();
   const t = getTranslation(language);
+  const [projectCount, setProjectCount] = useState(0);
+  const animationStarted = useRef(false);
+
+  useEffect(() => {
+    // Check for reduced motion preference
+    const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    
+    if (prefersReducedMotion) {
+      // If reduced motion is preferred, show 50 immediately
+      setProjectCount(50);
+      return;
+    }
+
+    // Only animate once per page load
+    if (animationStarted.current) return;
+    animationStarted.current = true;
+
+    // Animate from 1 to 50 over 10 seconds with ease-out
+    const duration = 10000; // 10 seconds
+    const startTime = Date.now();
+    const startValue = 1;
+    const endValue = 50;
+
+    const easeOut = (t: number) => 1 - Math.pow(1 - t, 3); // cubic ease-out
+
+    const animate = () => {
+      const elapsed = Date.now() - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      const easedProgress = easeOut(progress);
+      const currentValue = Math.round(startValue + (endValue - startValue) * easedProgress);
+      
+      setProjectCount(currentValue);
+
+      if (progress < 1) {
+        requestAnimationFrame(animate);
+      }
+    };
+
+    animate();
+  }, []);
 
   return (
     <section
@@ -132,7 +173,7 @@ export default function Hero() {
                     color: 'var(--accent-1)',
                   }}
                 >
-                  +150
+                  +{projectCount}
                 </span>
                 <span
                   style={{

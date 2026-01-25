@@ -56,6 +56,19 @@ export default function ServiceCards() {
       description: t.home.services.rebuild.description,
       gradient: 'linear-gradient(135deg, rgba(212, 175, 55, 0.12) 0%, rgba(230, 150, 50, 0.06) 100%)',
     },
+    {
+      icon: (
+        <svg width="32" height="32" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M8 14C8 14 9.5 16 12 16C14.5 16 16 14 16 14" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M9 9H9.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+          <path d="M15 9H15.01" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
+        </svg>
+      ),
+      title: t.home.services.branding.title,
+      description: t.home.services.branding.description,
+      gradient: 'linear-gradient(135deg, rgba(230, 150, 50, 0.15) 0%, rgba(212, 175, 55, 0.08) 100%)',
+    },
   ];
 
   return (

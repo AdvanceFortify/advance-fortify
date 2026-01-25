@@ -69,6 +69,10 @@ export const translations = {
           title: 'Website Refresh / Rebuild',
           description: 'Modernize outdated sites into premium experiences.',
         },
+        branding: {
+          title: 'Branding & Logo Design',
+          description: 'Distinctive visual identity that captures your brand essence.',
+        },
         viewAll: 'View All Services',
       },
       whyWorkWithUs: {
@@ -268,6 +272,10 @@ export const translations = {
         rebuild: {
           title: 'Reînnoire / Reconstruire Site',
           description: 'Modernizarea site-urilor învechite în experiențe premium.',
+        },
+        branding: {
+          title: 'Branding & Design Logo',
+          description: 'Identitate vizuală distinctivă care captează esența brandului tău.',
         },
         viewAll: 'Vezi Toate Serviciile',
       },

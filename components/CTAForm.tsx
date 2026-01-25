@@ -13,21 +13,49 @@ export default function CTAForm() {
     phone: '',
     serviceInterest: '',
     message: '',
+    companyWebsite: '', // Honeypot field
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const whatsappMessage = language === 'en'
     ? 'Hello! I\'d like to get a free consultation.'
     : 'Bună! Aș dori să obțin o consultație gratuită.';
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Front-end only for now - could integrate with contact handler later
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: '', email: '', phone: '', serviceInterest: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
+
+      // Success
+      setSubmitted(true);
+      setFormData({ name: '', email: '', phone: '', serviceInterest: '', message: '', companyWebsite: '' });
+
+      // Reset success message after 5 seconds
+      setTimeout(() => {
+        setSubmitted(false);
+      }, 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const serviceOptions = [
@@ -35,6 +63,7 @@ export default function CTAForm() {
     'SEO',
     'Integrations/Klaviyo',
     'Rebuild',
+    'Branding & Logo Design',
   ];
 
   return (
@@ -109,12 +138,45 @@ export default function CTAForm() {
                   color: 'var(--accent-1)',
                   fontSize: '1.125rem',
                   fontWeight: 600,
+                  background: 'rgba(212, 175, 55, 0.1)',
+                  borderRadius: '0.75rem',
                 }}
               >
-                {t.home.cta.success}
+                ✓ {t.home.cta.success}
               </div>
             ) : (
               <>
+                {error && (
+                  <div
+                    style={{
+                      padding: '1rem',
+                      marginBottom: '1.5rem',
+                      background: 'rgba(239, 68, 68, 0.1)',
+                      border: '1px solid rgba(239, 68, 68, 0.3)',
+                      borderRadius: '0.5rem',
+                      color: '#ef4444',
+                      fontSize: '0.9375rem',
+                      textAlign: 'center',
+                    }}
+                  >
+                    {error}
+                  </div>
+                )}
+
+                {/* Honeypot field - hidden from users, catches bots */}
+                <div style={{ position: 'absolute', left: '-9999px', opacity: 0, pointerEvents: 'none' }}>
+                  <label htmlFor="cta-company-website">Company Website</label>
+                  <input
+                    type="text"
+                    id="cta-company-website"
+                    name="companyWebsite"
+                    tabIndex={-1}
+                    autoComplete="off"
+                    value={formData.companyWebsite}
+                    onChange={(e) => setFormData({ ...formData, companyWebsite: e.target.value })}
+                  />
+                </div>
+
                 <div className="form-group">
                   <label htmlFor="cta-name" className="form-label">
                     {t.home.cta.name}
@@ -202,12 +264,15 @@ export default function CTAForm() {
                 <button
                   type="submit"
                   className="btn btn-primary"
+                  disabled={isSubmitting}
                   style={{
                     width: '100%',
                     marginTop: '1rem',
+                    opacity: isSubmitting ? 0.7 : 1,
+                    cursor: isSubmitting ? 'not-allowed' : 'pointer',
                   }}
                 >
-                  {t.home.cta.submit}
+                  {isSubmitting ? (language === 'en' ? 'Sending...' : 'Se trimite...') : t.home.cta.submit}
                 </button>
               </>
             )}
