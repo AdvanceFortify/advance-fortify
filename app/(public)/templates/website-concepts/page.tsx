@@ -4,46 +4,46 @@ import Link from 'next/link';
 
 const websiteTemplates = [
   {
-    name: 'Professional Services',
-    slug: 'professional-services',
-    description: 'Complete multi-page website for consulting, legal, or professional firms',
-    pages: ['Home', 'About', 'Services', 'Team', 'Blog', 'Contact'],
-    industries: ['Consulting', 'Legal', 'Accounting', 'Financial'],
+    name: 'BrightSmile Dental',
+    slug: 'brightsmile-dental',
+    description: 'Modern dental clinic with clean design, appointment booking, and patient-focused experience',
+    pages: ['Home', 'Services', 'Our Doctors', 'Testimonials', 'Booking'],
+    industries: ['Healthcare', 'Dental', 'Medical'],
   },
   {
-    name: 'Healthcare Practice',
-    slug: 'healthcare-practice',
-    description: 'Medical and wellness practice website with appointment booking',
-    pages: ['Home', 'Services', 'Providers', 'Patient Info', 'Appointments', 'Contact'],
-    industries: ['Medical', 'Dental', 'Therapy', 'Wellness'],
+    name: 'UrbanThreads Apparel',
+    slug: 'urbanthreads-apparel',
+    description: 'Contemporary fashion store with editorial style and sustainable focus',
+    pages: ['Collection', 'Lookbook', 'Our Story', 'Reviews', 'Newsletter'],
+    industries: ['Fashion', 'E-commerce', 'Retail'],
   },
   {
-    name: 'Restaurant & Hospitality',
-    slug: 'restaurant-hospitality',
-    description: 'Full-featured restaurant or hotel website with reservations',
-    pages: ['Home', 'Menu/Rooms', 'About', 'Gallery', 'Reservations', 'Contact'],
-    industries: ['Restaurants', 'Cafes', 'Hotels', 'Catering'],
+    name: 'HarborView Boutique Hotel',
+    slug: 'harborview-boutique-hotel',
+    description: 'Luxury coastal hotel with elegant design and booking system',
+    pages: ['Rooms', 'Amenities', 'Restaurant', 'Gallery', 'Contact'],
+    industries: ['Hospitality', 'Hotels', 'Travel'],
   },
   {
-    name: 'Real Estate',
-    slug: 'real-estate',
-    description: 'Property listing website with search and filter capabilities',
-    pages: ['Home', 'Listings', 'About', 'Services', 'Agents', 'Contact'],
-    industries: ['Real estate', 'Property management', 'Brokers'],
+    name: 'PeakPhysio Performance',
+    slug: 'peakphysio-performance',
+    description: 'Sports physiotherapy clinic with bold design and performance focus',
+    pages: ['Programs', 'Process', 'Team', 'Pricing', 'Booking'],
+    industries: ['Healthcare', 'Sports', 'Wellness'],
   },
   {
-    name: 'E-commerce Store',
-    slug: 'ecommerce-store',
-    description: 'Complete online store with product catalog and checkout',
-    pages: ['Home', 'Shop', 'Product Pages', 'Cart', 'Checkout', 'Account'],
-    industries: ['Retail', 'Fashion', 'Electronics', 'Lifestyle'],
+    name: 'NorthEdge Growth Marketing',
+    slug: 'northedge-growth-marketing',
+    description: 'Performance marketing agency with modern design and data-driven approach',
+    pages: ['Services', 'Case Studies', 'Process', 'Lead Magnet', 'Contact'],
+    industries: ['Marketing', 'Agency', 'Digital'],
   },
   {
-    name: 'Agency Portfolio',
-    slug: 'agency-portfolio',
-    description: 'Marketing or creative agency website with project showcase',
-    pages: ['Home', 'Services', 'Work', 'About', 'Insights', 'Contact'],
-    industries: ['Marketing', 'Design', 'Digital', 'Creative'],
+    name: 'Lumina Skin & Aesthetics',
+    slug: 'lumina-skin-aesthetics',
+    description: 'Premium beauty clinic with refined design and luxury feel',
+    pages: ['Treatments', 'Gallery', 'Specialist', 'Pricing', 'Booking'],
+    industries: ['Beauty', 'Aesthetics', 'Wellness'],
   },
 ];
 
@@ -116,7 +116,7 @@ export default function WebsiteConcepts() {
               lineHeight: 1.6,
             }}
           >
-            Multi-page website templates with complete navigation and structure. We adapt the design and content to match your business.
+            Fully-built client websites across various industries. Click any website to explore the complete design and functionality.
           </p>
         </div>
 
@@ -181,7 +181,7 @@ export default function WebsiteConcepts() {
                     backdropFilter: 'blur(10px)',
                   }}
                 >
-                  WEBSITE TEMPLATE
+                  FULL WEBSITE
                 </div>
 
                 {/* Content */}
@@ -291,7 +291,7 @@ export default function WebsiteConcepts() {
                   }}
                 >
                   <Link
-                    href={`/contact?template=${template.slug}`}
+                    href={`/clients/${template.slug}`}
                     style={{
                       fontWeight: 700,
                       color: 'var(--accent-1)',
@@ -300,7 +300,7 @@ export default function WebsiteConcepts() {
                       display: 'block',
                     }}
                   >
-                    Use This Concept →
+                    View Website →
                   </Link>
                 </div>
 

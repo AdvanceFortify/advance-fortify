@@ -16,9 +16,9 @@ export default function SiteFooter() {
   ];
 
   const socialLinks = [
-    { name: 'Instagram', href: '#', icon: '📷' },
-    { name: 'Facebook', href: '#', icon: '📘' },
-    { name: 'LinkedIn', href: '#', icon: '💼' },
+    { name: 'Instagram', href: 'https://www.instagram.com/advancefortify/', icon: '📷' },
+    { name: 'Facebook', href: 'https://www.facebook.com/advancefortify', icon: '📘' },
+    { name: 'LinkedIn', href: 'https://www.linkedin.com/in/gabriel-lung-', icon: '💼' },
     { name: 'TikTok', href: '#', icon: '🎵' },
   ];
 
@@ -205,6 +205,8 @@ export default function SiteFooter() {
                 <a
                   key={social.name}
                   href={social.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
                   aria-label={social.name}
                   style={{
                     display: 'flex',

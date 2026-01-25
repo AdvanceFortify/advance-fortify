@@ -221,7 +221,7 @@ export default function TemplatesHub() {
                   flex: 1,
                 }}
               >
-                Multi-page website templates with complete navigation, services pages, and integrated contact forms. Professional site structures ready to adapt.
+                Fully-built client websites across various industries. Explore complete designs with unique branding and functionality.
               </p>
               <div
                 style={{
