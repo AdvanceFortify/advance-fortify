@@ -56,7 +56,7 @@ export default function GoogleAnalytics() {
       });
 
       console.log('[GA4] Loaded with consent');
-    };
+    };  
 
     // Check on mount
     checkAndLoadGA();
