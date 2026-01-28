@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from '@/components/LanguageProvider';
 import { getTranslation } from '@/lib/translations';
+import { trackEvent } from '@/lib/analytics';
 
 export default function ContactPage() {
   const { language } = useLanguage();
@@ -29,6 +30,10 @@ export default function ContactPage() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setSubmitted(true);
+    
+    // Track GA4 conversion event: contact_form_submit
+    trackEvent('contact_form_submit');
+    
     setTimeout(() => {
       setFormData({ name: '', email: '', message: '' });
       setSubmitted(false);
@@ -99,6 +104,7 @@ export default function ContactPage() {
                 gap: '1rem',
                 transition: 'all 0.3s ease',
               }}
+              onClick={() => trackEvent('whatsapp_click', { method: 'whatsapp' })}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
                 e.currentTarget.style.borderColor = 'var(--accent-1)';
@@ -135,6 +141,7 @@ export default function ContactPage() {
                 gap: '1rem',
                 transition: 'all 0.3s ease',
               }}
+              onClick={() => trackEvent('email_click', { method: 'email' })}
               onMouseEnter={(e) => {
                 e.currentTarget.style.transform = 'translateY(-4px)';
                 e.currentTarget.style.borderColor = 'var(--accent-1)';

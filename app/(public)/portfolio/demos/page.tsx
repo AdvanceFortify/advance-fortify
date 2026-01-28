@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import PortfolioCard from '@/components/PortfolioCard';
+import { trackEvent } from '@/lib/analytics';
 
 interface PortfolioItem {
   title: string;
@@ -131,6 +132,7 @@ export default function DemosPage() {
               fontSize: '1rem',
               padding: '0.875rem 2rem',
             }}
+            onClick={() => trackEvent('request_quote')}
           >
             Request a Quote
           </Link>

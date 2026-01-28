@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
+import { trackEvent } from '@/lib/analytics';
 
 export default function CTAForm() {
   const { language } = useLanguage();
@@ -46,6 +47,9 @@ export default function CTAForm() {
       // Success
       setSubmitted(true);
       setFormData({ name: '', email: '', phone: '', serviceInterest: '', message: '', companyWebsite: '' });
+
+      // Track GA4 conversion event: contact_form_submit
+      trackEvent('contact_form_submit');
 
       // Reset success message after 5 seconds
       setTimeout(() => {
@@ -299,6 +303,7 @@ export default function CTAForm() {
                 gap: '0.5rem',
                 textDecoration: 'none',
               }}
+              onClick={() => trackEvent('whatsapp_click', { method: 'whatsapp' })}
             >
               <span>💬</span>
               {t.home.cta.whatsapp}
@@ -327,6 +332,7 @@ export default function CTAForm() {
                 gap: '0.5rem',
                 textDecoration: 'none',
               }}
+              onClick={() => trackEvent('email_click', { method: 'email' })}
             >
               <span>✉️</span>
               {t.home.cta.emailContact}

@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from '@/components/LanguageProvider';
 import { getTranslation } from '@/lib/translations';
+import { trackEvent } from '@/lib/analytics';
 
 export default function PricingPage() {
   const { language } = useLanguage();
@@ -201,6 +202,7 @@ export default function PricingPage() {
           textDecoration: 'none',
           display: 'block',
         }}
+        onClick={() => trackEvent('request_quote')}
       >
         {tier.cta}
       </Link>

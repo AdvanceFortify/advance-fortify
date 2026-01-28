@@ -3,6 +3,7 @@
 import Link from 'next/link';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
+import { trackEvent } from '@/lib/analytics';
 
 export default function SiteFooter() {
   const { language } = useLanguage();
@@ -158,6 +159,7 @@ export default function SiteFooter() {
                     textDecoration: 'none',
                     transition: 'color 0.3s ease',
                   }}
+                  onClick={() => trackEvent('email_click', { method: 'email' })}
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-1)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                 >

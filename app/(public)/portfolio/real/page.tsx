@@ -2,6 +2,7 @@
 
 import Link from 'next/link';
 import { realProjects } from '@/lib/realProjects';
+import { trackEvent } from '@/lib/analytics';
 
 export default function RealPortfolioPage() {
   return (
@@ -85,6 +86,7 @@ export default function RealPortfolioPage() {
               fontSize: '1rem',
               padding: '0.875rem 2rem',
             }}
+            onClick={() => trackEvent('request_quote')}
           >
             Request Similar Project
           </Link>

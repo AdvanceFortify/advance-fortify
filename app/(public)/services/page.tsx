@@ -1,13 +1,11 @@
-import { Metadata } from 'next';
-import { getTranslation } from '@/lib/translations';
+'use client';
 
-export const metadata: Metadata = {
-  title: 'Services | Advance Fortify',
-  description: 'Premium web design, landing pages, SEO, and digital marketing services.',
-};
+import Link from 'next/link';
+import { getTranslation } from '@/lib/translations';
+import { trackEvent } from '@/lib/analytics';
 
 export default function ServicesPage() {
-  const t = getTranslation('en'); // Default to EN for server component
+  const t = getTranslation('en'); // Default to EN
 
   // Safe fallback services with optional chaining
   const services = [
@@ -165,7 +163,7 @@ export default function ServicesPage() {
         }}
       >
         <div className="container">
-          <a
+          <Link
             href="/contact"
             className="btn btn-primary"
             style={{
@@ -174,9 +172,10 @@ export default function ServicesPage() {
               gap: '0.5rem',
               textDecoration: 'none',
             }}
+            onClick={() => trackEvent('request_quote')}
           >
             Get Started Today
-          </a>
+          </Link>
         </div>
       </section>
     </div>

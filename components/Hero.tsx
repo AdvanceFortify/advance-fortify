@@ -5,6 +5,7 @@ import Link from 'next/link';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
 import { useEffect, useRef, useState } from 'react';
+import { trackEvent } from '@/lib/analytics';
 
 export default function Hero() {
   const { language } = useLanguage();
@@ -139,6 +140,7 @@ export default function Hero() {
                   gap: '0.5rem',
                   textDecoration: 'none',
                 }}
+                onClick={() => trackEvent('request_quote')}
               >
                 Request a Consultation
               </Link>
