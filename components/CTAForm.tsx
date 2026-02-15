@@ -7,7 +7,13 @@ import { getTranslation } from '@/lib/translations';
 import { trackEvent } from '@/lib/analytics';
 import { STAGE_OPTIONS_FORM, REQUEST_PROPOSAL_ID } from '@/lib/launchStages';
 
-const VALID_STAGE_VALUES = new Set(STAGE_OPTIONS_FORM.map((o) => o.value));
+type StageValue = 'stage-1' | 'stage-2' | 'stage-3' | 'stage-4' | 'stage-5';
+
+const VALID_STAGE_VALUES = ['stage-1', 'stage-2', 'stage-3', 'stage-4', 'stage-5'] as const;
+
+function isStageValue(v: string): v is StageValue {
+  return (VALID_STAGE_VALUES as readonly string[]).includes(v);
+}
 
 export default function CTAForm() {
   const { language } = useLanguage();
@@ -32,9 +38,9 @@ export default function CTAForm() {
 
   // Preselect stage from URL (?stage=stage-1) and scroll to form when hash is #request-proposal
   useEffect(() => {
-    const stage = searchParams.get('stage');
-    if (stage && VALID_STAGE_VALUES.has(stage)) {
-      setFormData((prev) => ({ ...prev, stage }));
+    const stageParam = searchParams.get('stage');
+    if (stageParam && isStageValue(stageParam)) {
+      setFormData((prev) => ({ ...prev, stage: stageParam }));
     }
     if (typeof window !== 'undefined' && window.location.hash === `#${REQUEST_PROPOSAL_ID}`) {
       const el = document.getElementById(REQUEST_PROPOSAL_ID);
