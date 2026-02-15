@@ -27,8 +27,8 @@ export default function ResultsShowcase() {
             }}
           />
           <h2
+            className="results-section-title"
             style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: 700,
               textAlign: 'center',
               marginBottom: '1rem',
@@ -56,13 +56,7 @@ export default function ResultsShowcase() {
             marginBottom: '3rem',
           }}
         >
-            <div
-              className="card"
-              style={{
-                padding: '3rem 2rem',
-                textAlign: 'center',
-              }}
-            >
+            <div className="results-stat-card card">
             <div
               style={{
                 fontSize: '4rem',
@@ -76,23 +70,12 @@ export default function ResultsShowcase() {
             >
               {t.home.results.leads}
             </div>
-            <p
-              style={{
-                color: 'var(--muted)',
-                fontSize: '1.125rem',
-              }}
-            >
+            <p className="results-stat-desc" style={{ color: 'var(--muted)' }}>
               Increase in qualified leads
             </p>
           </div>
 
-            <div
-              className="card"
-              style={{
-                padding: '3rem 2rem',
-                textAlign: 'center',
-              }}
-            >
+            <div className="results-stat-card card">
             <div
               style={{
                 fontSize: '4rem',
@@ -106,14 +89,7 @@ export default function ResultsShowcase() {
             >
               {t.home.results.cpa}
             </div>
-            <p
-              style={{
-                color: 'var(--muted)',
-                fontSize: '1.125rem',
-                position: 'relative',
-                zIndex: 1,
-              }}
-            >
+            <p className="results-stat-desc" style={{ color: 'var(--muted)', position: 'relative', zIndex: 1 }}>
               Reduction in cost per acquisition
             </p>
           </div>
@@ -135,6 +111,34 @@ export default function ResultsShowcase() {
           </Link>
         </div>
       </div>
+      <style jsx>{`
+        .results-section-title {
+          font-size: clamp(1.75rem, 3vw, 2.625rem);
+        }
+        .results-stat-card {
+          padding: 2.5rem 2rem !important;
+          text-align: center;
+          background: rgba(15, 18, 28, 0.6) !important;
+          backdrop-filter: blur(6px);
+          -webkit-backdrop-filter: blur(6px);
+          border: 1px solid rgba(212, 175, 55, 0.18) !important;
+          transition: transform 0.35s ease, box-shadow 0.35s ease, border-color 0.35s ease;
+        }
+        .results-stat-card:hover {
+          transform: translateY(-6px);
+          border-color: rgba(212, 175, 55, 0.28) !important;
+          box-shadow: 0 20px 48px rgba(0, 0, 0, 0.25), 0 8px 24px rgba(212, 175, 55, 0.08);
+        }
+        .results-stat-desc {
+          font-size: 1.125rem;
+          line-height: 1.6;
+        }
+        @media (max-width: 767px) {
+          .results-stat-desc {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }

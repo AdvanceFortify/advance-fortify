@@ -1,9 +1,5 @@
-import Hero from '@/components/Hero';
-import ServiceCards from '@/components/ServiceCards';
-import WhyWorkWithUs from '@/components/WhyWorkWithUs';
-import ResultsShowcase from '@/components/ResultsShowcase';
-import CTAForm from '@/components/CTAForm';
-import { Metadata } from 'next';    
+import HomePageClient from '@/components/HomePageClient';
+import { Metadata } from 'next';
 
 export const metadata: Metadata = {
   title: 'Advance Fortify | Premium Web Design, SEO & Marketing',
@@ -30,11 +26,7 @@ export const metadata: Metadata = {
 export default function HomePage() {
   return (
     <>
-      <Hero />
-      <ServiceCards />
-      <WhyWorkWithUs />
-      <ResultsShowcase />
-      <CTAForm />
+      <HomePageClient />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{

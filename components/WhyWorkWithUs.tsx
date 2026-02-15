@@ -63,8 +63,8 @@ export default function WhyWorkWithUs() {
       <div className="container">
         <div className="section-title">
           <h2
+            className="why-section-title"
             style={{
-              fontSize: 'clamp(2rem, 4vw, 3rem)',
               fontWeight: 700,
               marginBottom: '1rem',
               color: 'var(--text)',
@@ -73,8 +73,8 @@ export default function WhyWorkWithUs() {
             {t.home.whyWorkWithUs.title}
           </h2>
           <p
+            className="why-section-subtitle"
             style={{
-              fontSize: 'clamp(1rem, 1.5vw, 1.125rem)',
               color: 'var(--muted)',
               maxWidth: '600px',
               margin: '0 auto',
@@ -128,19 +128,31 @@ export default function WhyWorkWithUs() {
               >
                 {benefit.title}
               </h3>
-              <p
-                style={{
-                  color: 'var(--muted)',
-                  lineHeight: 1.7,
-                  fontSize: '0.9375rem',
-                }}
-              >
+              <p className="why-benefit-desc" style={{ color: 'var(--muted)', lineHeight: 1.7 }}>
                 {benefit.description}
               </p>
             </div>
           ))}
         </div>
       </div>
+      <style jsx>{`
+        .why-section-title {
+          font-size: clamp(1.75rem, 3vw, 2.625rem);
+        }
+        .why-section-subtitle {
+          font-size: 1.125rem;
+          line-height: 1.65;
+        }
+        .why-benefit-desc {
+          font-size: 1.125rem;
+        }
+        @media (max-width: 767px) {
+          .why-section-subtitle,
+          .why-benefit-desc {
+            font-size: 1rem;
+          }
+        }
+      `}</style>
     </section>
   );
 }

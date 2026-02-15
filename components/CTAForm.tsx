@@ -1,18 +1,24 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
 import { trackEvent } from '@/lib/analytics';
+import { STAGE_OPTIONS_FORM, REQUEST_PROPOSAL_ID } from '@/lib/launchStages';
+
+const VALID_STAGE_VALUES = new Set(STAGE_OPTIONS_FORM.map((o) => o.value));
 
 export default function CTAForm() {
   const { language } = useLanguage();
   const t = getTranslation(language);
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     name: '',
     email: '',
     phone: '',
     serviceInterest: '',
+    stage: '',
     message: '',
     companyWebsite: '', // Honeypot field
   });
@@ -23,6 +29,18 @@ export default function CTAForm() {
   const whatsappMessage = language === 'en'
     ? 'Hello! I\'d like to get a free consultation.'
     : 'Bună! Aș dori să obțin o consultație gratuită.';
+
+  // Preselect stage from URL (?stage=stage-1) and scroll to form when hash is #request-proposal
+  useEffect(() => {
+    const stage = searchParams.get('stage');
+    if (stage && VALID_STAGE_VALUES.has(stage)) {
+      setFormData((prev) => ({ ...prev, stage }));
+    }
+    if (typeof window !== 'undefined' && window.location.hash === `#${REQUEST_PROPOSAL_ID}`) {
+      const el = document.getElementById(REQUEST_PROPOSAL_ID);
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -46,7 +64,7 @@ export default function CTAForm() {
 
       // Success
       setSubmitted(true);
-      setFormData({ name: '', email: '', phone: '', serviceInterest: '', message: '', companyWebsite: '' });
+      setFormData({ name: '', email: '', phone: '', serviceInterest: '', stage: '', message: '', companyWebsite: '' });
 
       // Track GA4 conversion event: contact_form_submit
       trackEvent('contact_form_submit');
@@ -72,6 +90,7 @@ export default function CTAForm() {
 
   return (
     <section
+      id={REQUEST_PROPOSAL_ID}
       style={{
         padding: '6rem 0',
         background: 'transparent',
@@ -87,6 +106,7 @@ export default function CTAForm() {
         >
           <div className="section-title">
             <h2
+              id="request-proposal-heading"
               style={{
                 fontSize: 'clamp(2rem, 4vw, 3rem)',
                 fontWeight: 700,
@@ -226,6 +246,28 @@ export default function CTAForm() {
                     onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                     placeholder={t.home.cta.phone}
                   />
+                </div>
+
+                <div className="form-group">
+                  <label htmlFor="cta-stage" className="form-label">
+                    Which stage do you want to start with?
+                  </label>
+                  <select
+                    id="cta-stage"
+                    name="stage"
+                    className="form-select"
+                    required
+                    value={formData.stage}
+                    onChange={(e) => setFormData({ ...formData, stage: e.target.value })}
+                    aria-required="true"
+                  >
+                    <option value="">Select a stage</option>
+                    {STAGE_OPTIONS_FORM.map((opt) => (
+                      <option key={opt.value} value={opt.value}>
+                        {opt.label}
+                      </option>
+                    ))}
+                  </select>
                 </div>
 
                 <div className="form-group">

@@ -69,8 +69,8 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate required fields
-    const { name, email, serviceInterest, message } = body;
+    // Validate required fields (stage is optional for backward compatibility)
+    const { name, email, serviceInterest, message, stage } = body;
 
     if (!name || !email || !serviceInterest || !message) {
       return NextResponse.json(
@@ -96,6 +96,7 @@ export async function POST(request: NextRequest) {
     console.log('Email:', email);
     console.log('Phone:', body.phone || 'Not provided');
     console.log('Service Interest:', serviceInterest);
+    console.log('Stage:', stage || 'Not specified');
     console.log('Message:', message);
     console.log('IP:', ip);
     console.log('===================================');
@@ -146,6 +147,12 @@ export async function POST(request: NextRequest) {
                   <td style="padding: 8px 0; color: #666; font-weight: bold;">Service Interest:</td>
                   <td style="padding: 8px 0; color: #333;"><strong>${serviceInterest}</strong></td>
                 </tr>
+                ${stage ? `
+                <tr>
+                  <td style="padding: 8px 0; color: #666; font-weight: bold;">Stage (Launch System):</td>
+                  <td style="padding: 8px 0; color: #333;"><strong>${stage}</strong></td>
+                </tr>
+                ` : ''}
               </table>
             </div>
 
@@ -186,6 +193,7 @@ Name: ${name}
 Email: ${email}
 Phone: ${body.phone || 'Not provided'}
 Service Interest: ${serviceInterest}
+${stage ? `Stage (Launch System): ${stage}\n` : ''}
 
 Message:
 --------
