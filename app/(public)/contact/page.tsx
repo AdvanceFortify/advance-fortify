@@ -14,6 +14,8 @@ export default function ContactPage() {
     message: '',
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const whatsappMessage = language === 'en'
     ? 'Hello! I\'d like to get in touch about your services.'
@@ -27,17 +29,41 @@ export default function ContactPage() {
     ? 'Hello,\n\nI would like to discuss:\n\n'
     : 'Bună,\n\nAș dori să discut despre:\n\n';
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setSubmitted(true);
-    
-    // Track GA4 conversion event: contact_form_submit
-    trackEvent('contact_form_submit');
-    
-    setTimeout(() => {
+    setIsSubmitting(true);
+    setError(null);
+
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+          serviceInterest: 'General inquiry (Contact page)',
+          stage: 'Unknown',
+          phone: '',
+          companyWebsite: '',
+        }),
+      });
+
+      const data = await response.json();
+
+      if (!response.ok) {
+        throw new Error(data.error || 'Failed to submit form');
+      }
+
+      setSubmitted(true);
+      trackEvent('contact_form_submit');
       setFormData({ name: '', email: '', message: '' });
-      setSubmitted(false);
-    }, 3000);
+      setTimeout(() => setSubmitted(false), 5000);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : 'An error occurred. Please try again.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -243,6 +269,22 @@ export default function ContactPage() {
                 </div>
               ) : (
                 <>
+                  {error && (
+                    <div
+                      style={{
+                        padding: '1rem',
+                        marginBottom: '1.5rem',
+                        background: 'rgba(239, 68, 68, 0.1)',
+                        border: '1px solid rgba(239, 68, 68, 0.3)',
+                        borderRadius: '0.5rem',
+                        color: '#ef4444',
+                        fontSize: '0.9375rem',
+                        textAlign: 'center',
+                      }}
+                    >
+                      {error}
+                    </div>
+                  )}
                   <div className="form-group">
                     <label htmlFor="contact-name" className="form-label">
                       {t.contact.form.name}
@@ -294,12 +336,17 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     className="btn btn-primary"
+                    disabled={isSubmitting}
                     style={{
                       width: '100%',
                       marginTop: '1rem',
+                      opacity: isSubmitting ? 0.7 : 1,
+                      cursor: isSubmitting ? 'not-allowed' : 'pointer',
                     }}
                   >
-                    {t.contact.form.submit}
+                    {isSubmitting
+                      ? (language === 'en' ? 'Sending...' : 'Se trimite...')
+                      : t.contact.form.submit}
                   </button>
                 </>
               )}
