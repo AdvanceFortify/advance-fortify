@@ -5,7 +5,7 @@ export const translations = {
     nav: {
       home: 'Home',
       services: 'Services',
-      portfolio: 'Templates',
+      portfolio: 'Portfolio',
       pricing: 'Pricing',
       about: 'About',
       contact: 'Contact',
@@ -306,7 +306,7 @@ export const translations = {
     nav: {
       home: 'Acasă',
       services: 'Servicii',
-      portfolio: 'Șabloane',
+      portfolio: 'Portfolio',
       pricing: 'Prețuri',
       about: 'Despre',
       contact: 'Contact',
