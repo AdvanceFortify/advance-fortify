@@ -95,10 +95,10 @@ export default function TemplatesHub() {
             }}
           >
             {/* Real Portfolio */}
-            <Link href="/portfolio" className="portfolio-card">
+            <Link href="/portfolio" className="portfolio-card" style={{ pointerEvents: 'auto' }}>
               <span className="portfolio-card-border">
                 <span className="portfolio-card-inner">
-                  <span className="portfolio-card-blob" aria-hidden="true" />
+                  <span className="portfolio-card-blob" aria-hidden="true" style={{ pointerEvents: 'none' }} />
                   <span className="portfolio-card-icon">💼</span>
                   <h2
                     style={{
@@ -126,16 +126,16 @@ export default function TemplatesHub() {
                     View Portfolio
                     <span className="portfolio-card-cta-arrow">→</span>
                   </span>
-                  <span className="portfolio-card-glow" aria-hidden="true" />
+                  <span className="portfolio-card-glow" aria-hidden="true" style={{ pointerEvents: 'none' }} />
                 </span>
               </span>
             </Link>
 
             {/* Landing Page Inspiration */}
-            <Link href="/templates/landing-page-concepts" className="portfolio-card">
+            <Link href="/templates/landing-page-concepts" className="portfolio-card" style={{ pointerEvents: 'auto' }}>
               <span className="portfolio-card-border">
                 <span className="portfolio-card-inner">
-                  <span className="portfolio-card-blob" aria-hidden="true" />
+                  <span className="portfolio-card-blob" aria-hidden="true" style={{ pointerEvents: 'none' }} />
                   <span className="portfolio-card-icon">📄</span>
                   <h2
                     style={{
@@ -163,16 +163,16 @@ export default function TemplatesHub() {
                     Browse Inspiration
                     <span className="portfolio-card-cta-arrow">→</span>
                   </span>
-                  <span className="portfolio-card-glow" aria-hidden="true" />
+                  <span className="portfolio-card-glow" aria-hidden="true" style={{ pointerEvents: 'none' }} />
                 </span>
               </span>
             </Link>
 
             {/* Website Inspiration */}
-            <Link href="/templates/website-concepts" className="portfolio-card">
+            <Link href="/templates/website-concepts" className="portfolio-card" style={{ pointerEvents: 'auto' }}>
               <span className="portfolio-card-border">
                 <span className="portfolio-card-inner">
-                  <span className="portfolio-card-blob" aria-hidden="true" />
+                  <span className="portfolio-card-blob" aria-hidden="true" style={{ pointerEvents: 'none' }} />
                   <span className="portfolio-card-icon">🌐</span>
                   <h2
                     style={{
@@ -200,7 +200,7 @@ export default function TemplatesHub() {
                     Browse Inspiration
                     <span className="portfolio-card-cta-arrow">→</span>
                   </span>
-                  <span className="portfolio-card-glow" aria-hidden="true" />
+                  <span className="portfolio-card-glow" aria-hidden="true" style={{ pointerEvents: 'none' }} />
                 </span>
               </span>
             </Link>
@@ -215,6 +215,7 @@ export default function TemplatesHub() {
             outline: none;
             border-radius: 32px;
             transition: transform 250ms ease, box-shadow 250ms ease;
+            pointer-events: auto;
           }
           .portfolio-card:hover {
             transform: translateY(-6px) scale(1.02);

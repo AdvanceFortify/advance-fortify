@@ -4,10 +4,7 @@ import type { NextRequest } from 'next/server';
 export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // Redirect /portfolio to /templates
-  if (pathname === '/portfolio') {
-    return NextResponse.redirect(new URL('/templates', request.url));
-  }
+  // /portfolio is served by app/(public)/portfolio/page.tsx (real portfolio)
 
   // Redirect /portofoliu (Romanian) to /templates
   if (pathname === '/portofoliu') {
