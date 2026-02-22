@@ -30,6 +30,7 @@ export default function ContactPage() {
     : 'Bună,\n\nAș dori să discut despre:\n\n';
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log('Submitting form...');
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);

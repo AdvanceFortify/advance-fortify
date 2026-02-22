@@ -49,6 +49,7 @@ export default function CTAForm() {
   }, [searchParams]);
 
   const handleSubmit = async (e: React.FormEvent) => {
+    console.log('Submitting form...');
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);

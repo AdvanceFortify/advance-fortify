@@ -44,6 +44,7 @@ setInterval(() => {
 }, 300000);
 
 export async function POST(request: NextRequest) {
+  console.log('API CONTACT HIT');
   try {
     const body = await request.json();
 
@@ -106,7 +107,6 @@ export async function POST(request: NextRequest) {
 
     // Send email via Resend
     let emailSent = false;
-    let emailError = null;
 
     try {
       if (!process.env.RESEND_API_KEY) {
@@ -118,9 +118,10 @@ export async function POST(request: NextRequest) {
         throw new Error('Failed to initialize Resend');
       }
 
+      const toEmail = process.env.LEADS_TO_EMAIL || 'admin@advancefortify.com';
       const { data, error } = await resend.emails.send({
         from: 'Advance Fortify <no-reply@advancefortify.com>',
-        to: 'admin@advancefortify.com',
+        to: toEmail,
         subject: `New website inquiry — ${serviceInterest}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
@@ -214,27 +215,18 @@ IP Address: ${ip}
       emailSent = true;
       console.log('✅ Email sent successfully via Resend:', data?.id);
     } catch (error) {
-      emailError = error;
       console.error('❌ Failed to send email via Resend:', error);
-      // Continue to return success - we don't want to lose leads
+      return NextResponse.json({ error: 'Email send failed', success: false }, { status: 500 });
     }
-
-    // Return success response (even if email failed)
-    const response: {
-      success: boolean;
-      message: string;
-      warning?: string;
-    } = {
-      success: true,
-      message: 'Your request has been received. We\'ll contact you within 24 hours.',
-    };
 
     if (!emailSent) {
-      response.warning = 'Submission recorded but email notification failed. Your message was logged.';
-      console.warn('⚠️ Returning success despite email failure to not lose lead');
+      return NextResponse.json({ error: 'Email send failed', success: false }, { status: 500 });
     }
 
-    return NextResponse.json(response);
+    return NextResponse.json({
+      success: true,
+      message: 'Your request has been received. We\'ll contact you within 24 hours.',
+    });
   } catch (error) {
     console.error('Contact form error:', error);
     return NextResponse.json(
