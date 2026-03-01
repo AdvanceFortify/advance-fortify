@@ -36,7 +36,7 @@ export default function HomePage() {
             name: 'Advance Fortify',
             url: 'https://advancefortify.com',
             email: 'admin@advancefortify.com',
-            telephone: '+40748979607',
+            telephone: '+40769686077',
             address: {
               '@type': 'PostalAddress',
               addressCountry: ['RO', 'US'],

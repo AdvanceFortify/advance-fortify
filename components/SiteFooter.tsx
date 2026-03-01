@@ -168,7 +168,7 @@ export default function SiteFooter() {
               </li>
               <li>
                 <a
-                  href="tel:+40748979607"
+                  href="tel:+40769686077"
                   style={{
                     color: 'var(--text-secondary)',
                     fontSize: '0.875rem',
@@ -178,7 +178,7 @@ export default function SiteFooter() {
                   onMouseEnter={(e) => (e.currentTarget.style.color = 'var(--accent-1)')}
                   onMouseLeave={(e) => (e.currentTarget.style.color = 'var(--muted)')}
                 >
-                  +40 748 979 607
+                  +40 769 686 077
                 </a>
               </li>
             </ul>

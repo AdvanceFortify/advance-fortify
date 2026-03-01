@@ -16,7 +16,7 @@ export default function PrivacyPolicyPage() {
     tradeRegister: 'J2026002094009',
     mainCAEN: '6210',
     email: 'admin@advancefortify.com',
-    phone: '+40748979607',
+    phone: '+40769686077',
   };
 
   return (

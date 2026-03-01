@@ -342,7 +342,7 @@ export default function CTAForm() {
             }}
           >
             <a
-              href={`https://wa.me/40748979607?text=${encodeURIComponent(whatsappMessage)}`}
+              href={`https://wa.me/40769686077?text=${encodeURIComponent(whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"
@@ -358,7 +358,7 @@ export default function CTAForm() {
               {t.home.cta.whatsapp}
             </a>
             <a
-              href="https://t.me/+40748979607"
+              href="https://t.me/+40769686077"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-secondary"

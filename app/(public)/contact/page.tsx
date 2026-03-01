@@ -117,7 +117,7 @@ export default function ContactPage() {
             }}
           >
             <a
-              href={`https://wa.me/40748979607?text=${encodeURIComponent(whatsappMessage)}`}
+              href={`https://wa.me/40769686077?text=${encodeURIComponent(whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
               className="card"
@@ -152,7 +152,7 @@ export default function ContactPage() {
               >
                 {t.contact.whatsapp}
               </h3>
-              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>+40 748 979 607</p>
+              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>+40 769 686 077</p>
             </a>
 
             <a
@@ -193,7 +193,7 @@ export default function ContactPage() {
             </a>
 
             <a
-              href="https://t.me/+40748979607"
+              href="https://t.me/+40769686077"
               target="_blank"
               rel="noopener noreferrer"
               className="card"
@@ -227,7 +227,7 @@ export default function ContactPage() {
               >
                 {t.contact.telegram}
               </h3>
-              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>+40 748 979 607</p>
+              <p style={{ color: 'var(--text-secondary)', margin: 0 }}>+40 769 686 077</p>
             </a>
           </div>
 
