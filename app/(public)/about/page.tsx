@@ -36,7 +36,7 @@ export default function AboutPage() {
               margin: '0 auto',
             }}
           >
-            We transform businesses through premium digital solutions
+            The Dedicated Tech Ops Team for 7-Figure Brands.
           </p>
         </div>
       </section>
@@ -78,10 +78,7 @@ export default function AboutPage() {
                   marginBottom: '1.5rem',
                 }}
               >
-                At Advance Fortify, we believe that every business deserves a digital presence that
-                not only looks premium but also drives real results. We combine cutting-edge
-                technology with strategic marketing to create solutions that convert visitors into
-                customers.
+                At Advance Fortify, we believe founders should focus on building their product and serving their audience, not getting stuck in the technical weeds. Our mission is to eliminate tech friction from your Road to $1 Million. We don&apos;t just build websites; we engineer the exact infrastructure—from validation funnels to scalable Shopify stores and automated retention engines—required to hit 100 sales per day.
               </p>
               <p
                 style={{
@@ -90,8 +87,7 @@ export default function AboutPage() {
                   fontSize: '1.125rem',
                 }}
               >
-                With over 150 successful projects and a 4.9/5 client rating, we've helped
-                businesses across Romania and the USA achieve their digital goals.
+                With over 150 successful projects, we provide the technical foundation that physical product entrepreneurs across Romania and the USA trust to launch, test, and scale with zero chaos.
               </p>
             </div>
 
@@ -120,11 +116,11 @@ export default function AboutPage() {
                 }}
               >
                 {[
-                  'Premium design with conversion-focused approach',
-                  'Fast, optimized websites built with Next.js',
-                  'Comprehensive SEO and marketing strategies',
-                  'Dedicated support throughout your journey',
-                  'Proven track record of success',
+                  { title: 'Flawless Execution of The Pathway', text: 'We execute a strict 5-stage system. No skipped steps, no premature scaling.' },
+                  { title: 'Zero Technical Friction', text: 'We handle the coding, Meta/Google pixels, and Klaviyo flow integrations so you don\'t have to.' },
+                  { title: 'Built for 100 Sales/Day', text: 'Robust Shopify and modern web infrastructure engineered to scale without breaking.' },
+                  { title: 'Data-Driven Validation', text: 'Exact CPA reporting and split testing to validate demand before you order heavy inventory.' },
+                  { title: 'Retention & LTV Focus', text: 'Automated systems for post-purchase reviews (Loox/Okendo) and ambassador programs.' },
                 ].map((item, idx) => (
                   <li
                     key={idx}
@@ -137,7 +133,10 @@ export default function AboutPage() {
                     }}
                   >
                     <span style={{ color: 'var(--gold)', fontSize: '1.5rem' }}>★</span>
-                    <span>{item}</span>
+                    <span>
+                      <strong style={{ color: 'var(--text)', display: 'block', marginBottom: '0.25rem' }}>{item.title}</strong>
+                      {item.text}
+                    </span>
                   </li>
                 ))}
               </ul>

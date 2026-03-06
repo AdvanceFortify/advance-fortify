@@ -87,14 +87,6 @@ export default function CTAForm() {
     }
   };
 
-  const serviceOptions = [
-    'Landing Page',
-    'SEO',
-    'Integrations/Klaviyo',
-    'Rebuild',
-    'Branding & Logo Design',
-  ];
-
   return (
     <section
       id={REQUEST_PROPOSAL_ID}
@@ -272,27 +264,6 @@ export default function CTAForm() {
                     {STAGE_OPTIONS_FORM.map((opt) => (
                       <option key={opt.value} value={opt.value}>
                         {opt.label}
-                      </option>
-                    ))}
-                  </select>
-                </div>
-
-                <div className="form-group">
-                  <label htmlFor="cta-service" className="form-label">
-                    {t.home.cta.serviceInterest}
-                  </label>
-                  <select
-                    id="cta-service"
-                    name="serviceInterest"
-                    className="form-select"
-                    required
-                    value={formData.serviceInterest}
-                    onChange={(e) => setFormData({ ...formData, serviceInterest: e.target.value })}
-                  >
-                    <option value="">{t.home.cta.serviceInterest}</option>
-                    {serviceOptions.map((option) => (
-                      <option key={option} value={option}>
-                        {option}
                       </option>
                     ))}
                   </select>

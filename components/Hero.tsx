@@ -83,11 +83,11 @@ export default function Hero() {
             <p className="hero-subtitle">{t.home.hero.subheadline}</p>
             <div className="hero-ctas">
               <Link
-                href="/services"
+                href="/#launch-system-title"
                 className="btn btn-primary"
                 onClick={() => trackEvent('request_quote')}
               >
-                View Services
+                {t.home.hero.ctaPrimary}
               </Link>
               <Link href="/#request-proposal" className="btn btn-secondary">
                 Get a Proposal

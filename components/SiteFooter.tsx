@@ -1,13 +1,11 @@
 'use client';
 
 import Link from 'next/link';
-import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
 import { trackEvent } from '@/lib/analytics';
 
 export default function SiteFooter() {
-  const { language } = useLanguage();
-  const t = getTranslation(language);
+  const t = getTranslation('en');
 
   const legalLinks = [
     { href: '/privacy-policy', label: t.footer.privacyPolicy },

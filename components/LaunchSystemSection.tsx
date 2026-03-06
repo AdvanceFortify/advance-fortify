@@ -50,7 +50,7 @@ export default function LaunchSystemSection() {
                 {stage.delivery}
               </div>
               <Link
-                href="/services#stages"
+                href="/pricing"
                 className="btn btn-primary launch-stage-cta"
                 onClick={() => trackEvent('request_quote')}
               >

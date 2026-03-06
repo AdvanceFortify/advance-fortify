@@ -88,7 +88,7 @@ Test the following pages to verify social links work correctly:
    - Check footer social icons
 
 2. **All Main Pages**
-   - `/services`
+   - `/pricing`
    - `/templates`
    - `/pricing`
    - `/about`

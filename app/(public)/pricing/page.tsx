@@ -211,11 +211,12 @@ export default function PricingPage() {
               maxWidth: '900px',
               margin: '0 auto',
             }}
-          >
+            >
             <div
               className="card"
               style={{
                 padding: '2.5rem',
+                paddingTop: '3.25rem',
                 border: '2px solid var(--accent-1)',
                 borderRadius: '1.25rem',
                 position: 'relative',
@@ -225,15 +226,17 @@ export default function PricingPage() {
               <div
                 style={{
                   position: 'absolute',
-                  top: '-10px',
+                  top: '1rem',
                   left: '50%',
                   transform: 'translateX(-50%)',
+                  zIndex: 10,
                   background: 'var(--accent-1)',
                   color: 'var(--bg-0)',
-                  padding: '0.25rem 0.75rem',
+                  padding: '0.35rem 0.85rem',
                   borderRadius: '9999px',
                   fontSize: '0.75rem',
                   fontWeight: 700,
+                  border: '4px solid #0b0b0e',
                 }}
               >
                 10% OFF
@@ -246,7 +249,7 @@ export default function PricingPage() {
                   color: 'var(--accent-1)',
                 }}
               >
-                Bundle A
+                Bundle A: The Validator
               </h3>
               <p
                 style={{
@@ -255,7 +258,7 @@ export default function PricingPage() {
                   fontSize: '0.9375rem',
                 }}
               >
-                Stage 1 + Stage 2 — Validate and test in one go.
+                Stage 1 + Stage 2 — Validate The Person and test the offer with pure data.
               </p>
               <ul
                 style={{
@@ -265,8 +268,8 @@ export default function PricingPage() {
                   color: 'var(--muted-2)',
                 }}
               >
-                <li>✓ Validation Landing Page</li>
-                <li>✓ Traffic & Testing (test sprint)</li>
+                <li>✓ Stage 1: Validation & The First 100</li>
+                <li>✓ Stage 2: Traffic & Data Testing</li>
               </ul>
               <Link
                 href="/#request-proposal"
@@ -288,6 +291,7 @@ export default function PricingPage() {
               className="card"
               style={{
                 padding: '2.5rem',
+                paddingTop: '3.25rem',
                 border: '2px solid var(--accent-1)',
                 borderRadius: '1.25rem',
                 position: 'relative',
@@ -297,15 +301,17 @@ export default function PricingPage() {
               <div
                 style={{
                   position: 'absolute',
-                  top: '-10px',
+                  top: '1rem',
                   left: '50%',
                   transform: 'translateX(-50%)',
+                  zIndex: 10,
                   background: 'var(--accent-1)',
                   color: 'var(--bg-0)',
-                  padding: '0.25rem 0.75rem',
+                  padding: '0.35rem 0.85rem',
                   borderRadius: '9999px',
                   fontSize: '0.75rem',
                   fontWeight: 700,
+                  border: '4px solid #0b0b0e',
                 }}
               >
                 15% OFF
@@ -318,7 +324,7 @@ export default function PricingPage() {
                   color: 'var(--accent-1)',
                 }}
               >
-                Bundle B
+                Bundle B: The Launchpad
               </h3>
               <p
                 style={{
@@ -327,7 +333,7 @@ export default function PricingPage() {
                   fontSize: '0.9375rem',
                 }}
               >
-                Stage 1 + Stage 2 + Stage 4 — Launch, test, and scale content.
+                Stage 3 + Stage 4 — Launch the Shopify store, get 100 reviews, and build the 25 Sales/Day engine.
               </p>
               <ul
                 style={{
@@ -337,9 +343,8 @@ export default function PricingPage() {
                   color: 'var(--muted-2)',
                 }}
               >
-                <li>✓ Validation Landing Page</li>
-                <li>✓ Traffic & Testing</li>
-                <li>✓ Content & Ads Engine</li>
+                <li>✓ Stage 3: The Launch Store & Reviews</li>
+                <li>✓ Stage 4: 25 Sales/Day Engine</li>
               </ul>
               <Link
                 href="/#request-proposal"
@@ -357,17 +362,6 @@ export default function PricingPage() {
               </Link>
             </div>
           </div>
-          <p
-            style={{
-              textAlign: 'center',
-              color: 'var(--muted-2)',
-              fontSize: '0.9375rem',
-              marginTop: '1.5rem',
-              fontStyle: 'italic',
-            }}
-          >
-            Discount applies when booked together.
-          </p>
         </div>
       </section>
     </div>

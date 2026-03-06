@@ -2,12 +2,10 @@
 
 import { useState, useEffect, useRef } from 'react';
 import Link from 'next/link';
-import { useLanguage } from './LanguageProvider';
 import { getTranslation } from '@/lib/translations';
 
 export default function SiteHeader() {
-  const { language } = useLanguage();
-  const t = getTranslation(language);
+  const t = getTranslation('en');
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSocialOpen, setIsSocialOpen] = useState(false);
@@ -33,7 +31,7 @@ export default function SiteHeader() {
 
   const navLinks = [
     { href: '/', label: t.nav.home },
-    { href: '/services', label: t.nav.services },
+    { href: '/#launch-system-title', label: t.nav.services },
     { href: '/templates', label: t.nav.portfolio },
     { href: '/pricing', label: t.nav.pricing },
     { href: '/about', label: t.nav.about },
@@ -176,8 +174,6 @@ export default function SiteHeader() {
               </div>
             )}
           </div>
-
-          <LanguageSwitch />
         </nav>
 
         <button
@@ -275,9 +271,6 @@ export default function SiteHeader() {
               </a>
             ))}
           </div>
-          <div style={{ padding: '0.75rem 0', borderTop: '1px solid var(--border-glow)', marginTop: '0.5rem' }}>
-            <LanguageSwitch />
-          </div>
         </nav>
       )}
 
@@ -295,48 +288,5 @@ export default function SiteHeader() {
         }
       `}</style>
     </header>
-  );
-}
-
-function LanguageSwitch() {
-  const { language, setLanguage } = useLanguage();
-
-  return (
-    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
-      <button
-        onClick={() => setLanguage('en')}
-        style={{
-          padding: '0.375rem 0.75rem',
-          background: language === 'en' ? 'var(--surface)' : 'transparent',
-          border: `1px solid ${language === 'en' ? 'var(--accent-1)' : 'var(--border)'}`,
-          borderRadius: '0.375rem',
-          color: language === 'en' ? 'var(--accent-1)' : 'var(--muted)',
-          fontWeight: 600,
-          fontSize: '0.875rem',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-        }}
-        aria-label="Switch to English"
-      >
-        EN
-      </button>
-      <button
-        onClick={() => setLanguage('ro')}
-        style={{
-          padding: '0.375rem 0.75rem',
-          background: language === 'ro' ? 'var(--surface)' : 'transparent',
-          border: `1px solid ${language === 'ro' ? 'var(--accent-1)' : 'var(--border)'}`,
-          borderRadius: '0.375rem',
-          color: language === 'ro' ? 'var(--accent-1)' : 'var(--muted)',
-          fontWeight: 600,
-          fontSize: '0.875rem',
-          cursor: 'pointer',
-          transition: 'all 0.3s ease',
-        }}
-        aria-label="Switch to Romanian"
-      >
-        RO
-      </button>
-    </div>
   );
 }

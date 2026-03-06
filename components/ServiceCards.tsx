@@ -112,7 +112,7 @@ export default function ServiceCards() {
 
         <div style={{ textAlign: 'center' }}>
           <Link
-            href="/services"
+            href="/pricing"
             className="btn btn-secondary"
             style={{
               display: 'inline-flex',

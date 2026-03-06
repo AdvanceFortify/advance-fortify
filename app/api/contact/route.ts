@@ -70,10 +70,10 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    // Validate required fields (stage is optional for backward compatibility)
+    // Validate required fields (serviceInterest removed from form; stage is primary selection)
     const { name, email, serviceInterest, message, stage } = body;
 
-    if (!name || !email || !serviceInterest || !message) {
+    if (!name || !email || !message) {
       return NextResponse.json(
         { error: 'Missing required fields', success: false },
         { status: 400 }
@@ -96,7 +96,7 @@ export async function POST(request: NextRequest) {
     console.log('Name:', name);
     console.log('Email:', email);
     console.log('Phone:', body.phone || 'Not provided');
-    console.log('Service Interest:', serviceInterest);
+    console.log('Service Interest:', serviceInterest || 'Not specified');
     console.log('Stage:', stage || 'Not specified');
     console.log('Message:', message);
     console.log('IP:', ip);
@@ -122,7 +122,7 @@ export async function POST(request: NextRequest) {
       const { data, error } = await resend.emails.send({
         from: 'Advance Fortify <no-reply@advancefortify.com>',
         to: toEmail,
-        subject: `New website inquiry — ${serviceInterest}`,
+        subject: `New website inquiry — ${stage || serviceInterest || 'Proposal Request'}`,
         html: `
           <div style="font-family: Arial, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
             <h2 style="color: #d4af37; border-bottom: 2px solid #d4af37; padding-bottom: 10px;">
@@ -144,10 +144,12 @@ export async function POST(request: NextRequest) {
                   <td style="padding: 8px 0; color: #666; font-weight: bold;">Phone:</td>
                   <td style="padding: 8px 0; color: #333;">${body.phone || 'Not provided'}</td>
                 </tr>
+                ${serviceInterest ? `
                 <tr>
                   <td style="padding: 8px 0; color: #666; font-weight: bold;">Service Interest:</td>
                   <td style="padding: 8px 0; color: #333;"><strong>${serviceInterest}</strong></td>
                 </tr>
+                ` : ''}
                 ${stage ? `
                 <tr>
                   <td style="padding: 8px 0; color: #666; font-weight: bold;">Stage (Launch System):</td>
@@ -193,8 +195,7 @@ Contact Details:
 Name: ${name}
 Email: ${email}
 Phone: ${body.phone || 'Not provided'}
-Service Interest: ${serviceInterest}
-${stage ? `Stage (Launch System): ${stage}\n` : ''}
+${serviceInterest ? `Service Interest: ${serviceInterest}\n` : ''}${stage ? `Stage (Launch System): ${stage}\n` : ''}
 
 Message:
 --------

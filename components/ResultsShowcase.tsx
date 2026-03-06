@@ -97,7 +97,7 @@ export default function ResultsShowcase() {
 
         <div style={{ textAlign: 'center' }}>
           <Link
-            href="/templates"
+            href="/#launch-system-title"
             className="btn btn-primary"
             style={{
               display: 'inline-flex',

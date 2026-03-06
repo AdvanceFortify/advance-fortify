@@ -45,9 +45,6 @@ Reusable helper function that:
    - All pricing tier CTA buttons (via `renderPricingCard` function)
    - Triggers on any "Request Quote" / "Get Started" pricing buttons
 
-5. `app/(public)/services/page.tsx` (line 177)
-   - "Get Started Today" button
-
 #### C. whatsapp_click
 **Event:** `gtag('event', 'whatsapp_click', { method: 'whatsapp' })`
 
